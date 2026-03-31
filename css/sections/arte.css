@@ -1,0 +1,22 @@
+.section-arte {
+  background-color: var(--color-cream);
+  padding-bottom: 0;
+}
+
+.section-arte__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  font-weight: 500;
+  font-style: italic;
+  text-align: center;
+  color: var(--color-olive);
+  max-width: 44rem;
+  margin-inline: auto;
+  margin-bottom: var(--space-xl);
+  padding-inline: var(--space-md);
+  line-height: 1.35;
+}
+
+.section-arte .carousel {
+  padding-bottom: var(--space-xl);
+}

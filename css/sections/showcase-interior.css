@@ -1,0 +1,16 @@
+.showcase-interior {
+  padding: 0;
+  line-height: 0;
+}
+
+.showcase-interior__media {
+  width: 100%;
+  max-height: min(85vh, 920px);
+  overflow: hidden;
+}
+
+.showcase-interior__media img {
+  width: 100%;
+  height: min(85vh, 920px);
+  object-fit: cover;
+}

@@ -1,0 +1,17 @@
+.callout-bar {
+  background-color: var(--color-olive);
+  color: var(--color-white);
+  padding-block: var(--space-lg);
+  text-align: center;
+}
+
+.callout-bar__text {
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 3vw, 1.85rem);
+  font-weight: 500;
+  font-style: italic;
+  max-width: 52rem;
+  margin-inline: auto;
+  padding-inline: var(--space-md);
+  line-height: 1.4;
+}

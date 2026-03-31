@@ -1,0 +1,30 @@
+.gallery-strip {
+  padding-block: var(--space-md);
+  background-color: var(--color-cream-dark);
+}
+
+.gallery-strip__track {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-inline: var(--space-md);
+  max-width: var(--container-wide);
+  margin-inline: auto;
+  scrollbar-width: thin;
+}
+
+.gallery-strip__item {
+  flex: 0 0 clamp(72px, 12vw, 120px);
+  scroll-snap-align: start;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 1;
+}
+
+.gallery-strip__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

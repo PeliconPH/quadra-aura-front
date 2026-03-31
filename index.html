@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quadra Aura — Um lugar à altura da vida que você construiu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components/button.css" />
+    <link rel="stylesheet" href="css/components/form-lead.css" />
+    <link rel="stylesheet" href="css/components/nav.css" />
+    <link rel="stylesheet" href="css/components/gallery-strip.css" />
+    <link rel="stylesheet" href="css/components/carousel.css" />
+    <link rel="stylesheet" href="css/sections/hero.css" />
+    <link rel="stylesheet" href="css/sections/intro-verde.css" />
+    <link rel="stylesheet" href="css/sections/callout-bar.css" />
+    <link rel="stylesheet" href="css/sections/plantas.css" />
+    <link rel="stylesheet" href="css/sections/showcase-interior.css" />
+    <link rel="stylesheet" href="css/sections/arte.css" />
+    <link rel="stylesheet" href="css/sections/lead-split.css" />
+    <link rel="stylesheet" href="css/sections/footer.css" />
+  </head>
+  <body class="page">
+    <div class="top-bar">
+      <div class="top-bar__inner">
+        <span>Belém · Pará</span>
+        <div class="top-bar__social" aria-label="Redes sociais">
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="site-header__row">
+        <span class="site-header__spacer" aria-hidden="true"></span>
+        <div class="site-header__logo">
+          <a class="site-header__logo-link" href="#topo">Quadra Aura</a>
+        </div>
+        <div class="site-header__cta">
+          <a class="btn btn--olive btn--nav-cta" href="#contato"
+            >Fale com um consultor</a
+          >
+        </div>
+      </div>
+      <nav class="site-nav-secondary" aria-label="Seções principais">
+        <ul class="site-nav-secondary__list">
+          <li><a href="#topo" aria-current="page">Home</a></li>
+          <li><a href="#projeto">Projeto</a></li>
+          <li><a href="#plantas">Plantas</a></li>
+          <li><a href="#implantacao">Implantação</a></li>
+          <li><a href="#localizacao">Localização</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="topo">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__bg">
+          <img
+            src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=1920&q=80"
+            alt=""
+            width="1920"
+            height="1080"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </div>
+        <div class="hero__overlay" aria-hidden="true"></div>
+        <div class="hero__inner">
+          <div class="hero__content">
+            <h1 id="hero-title" class="hero__headline">
+              Um lugar à altura da vida que você construiu.
+            </h1>
+            <p class="hero__sub">
+              Apartamentos de <strong>486 m²</strong> e unidades de
+              <strong>300 a 237 m²</strong>, entre o verde e a paisagem da baía,
+              no Umarizal — Belém.
+            </p>
+            <a class="btn btn--cream" href="#projeto">Conheça</a>
+          </div>
+          <div class="hero__form-wrap">
+            <form
+              class="lead-form"
+              action="#"
+              method="post"
+              aria-labelledby="lead-form-hero-title"
+            >
+              <h2 class="lead-form__title" id="lead-form-hero-title">
+                Queira viver o extraordinário.
+              </h2>
+              <div class="lead-form__field">
+                <label for="lead-name-hero">Nome</label>
+                <input
+                  class="lead-form__input"
+                  id="lead-name-hero"
+                  name="name"
+                  type="text"
+                  autocomplete="name"
+                  placeholder="Seu nome"
+                  required
+                />
+              </div>
+              <div class="lead-form__field">
+                <label for="lead-email-hero">E-mail</label>
+                <input
+                  class="lead-form__input"
+                  id="lead-email-hero"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  placeholder="seu@email.com"
+                  required
+                />
+              </div>
+              <div class="lead-form__field">
+                <label for="lead-phone-hero">Telefone</label>
+                <input
+                  class="lead-form__input"
+                  id="lead-phone-hero"
+                  name="phone"
+                  type="tel"
+                  autocomplete="tel"
+                  placeholder="(91) 90000-0000"
+                  required
+                />
+              </div>
+              <fieldset class="lead-form__fieldset">
+                <legend class="lead-form__legend">Preferência de contato</legend>
+                <div class="lead-form__radios">
+                  <label class="lead-form__radio">
+                    <input type="radio" name="contact-hero" value="whatsapp" checked />
+                    WhatsApp
+                  </label>
+                  <label class="lead-form__radio">
+                    <input type="radio" name="contact-hero" value="email" />
+                    E-mail
+                  </label>
+                  <label class="lead-form__radio">
+                    <input type="radio" name="contact-hero" value="phone" />
+                    Telefone
+                  </label>
+                </div>
+              </fieldset>
+              <button class="btn btn--olive btn--block" type="submit">
+                Enviar formulário
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <div class="gallery-strip" role="region" aria-label="Ambientes e materiais">
+        <div class="gallery-strip__track">
+          <div class="gallery-strip__item">
+            <img
+              src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=300&q=80"
+              alt=""
+              width="300"
+              height="300"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-strip__item">
+            <img
+              src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=300&q=80"
+              alt=""
+              width="300"
+              height="300"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-strip__item">
+            <img
+              src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=300&q=80"
+              alt=""
+              width="300"
+              height="300"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-strip__item">
+            <img
+              src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=300&q=80"
+              alt=""
+              width="300"
+              height="300"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-strip__item">
+            <img
+              src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=300&q=80"
+              alt=""
+              width="300"
+              height="300"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-strip__item">
+            <img
+              src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=300&q=80"
+              alt=""
+              width="300"
+              height="300"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-strip__item">
+            <img
+              src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=300&q=80"
+              alt=""
+              width="300"
+              height="300"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-strip__item">
+            <img
+              src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=300&q=80"
+              alt=""
+              width="300"
+              height="300"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+
+      <section
+        id="projeto"
+        class="section intro-verde"
+        aria-labelledby="intro-title"
+      >
+        <div class="container container--wide">
+          <h2 id="intro-title" class="intro-verde__headline">
+            Entre o verde e a paisagem da baía, seu novo lar.
+          </h2>
+          <div class="grid-2">
+            <div>
+              <p class="intro-verde__sub">Natureza, arte e conforto em equilíbrio.</p>
+              <p class="intro-verde__text">
+                O Quadra Aura traduz sofisticação urbana com vistas amplas,
+                lazer completo e arquitetura que respeita o entorno. Um endereço
+                para quem busca privacidade, espaço generoso e o melhor do
+                Umarizal ao alcance do dia a dia.
+              </p>
+              <ul class="intro-verde__list">
+                <li>Lazer completo com áreas verdes e espaços de convivência</li>
+                <li>Fachadas contemporâneas e acabamentos premium</li>
+                <li>Segurança, portaria e fluxos privativos</li>
+                <li>Proximidade à baía, serviços e mobilidade</li>
+              </ul>
+              <a class="btn btn--olive" href="#plantas">Saiba mais</a>
+            </div>
+            <div class="intro-verde__media">
+              <img
+                src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80"
+                alt="Fachada de edifício residencial ao entardecer"
+                width="1200"
+                height="800"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="callout-bar"
+        aria-label="Chamada principal"
+      >
+        <p class="callout-bar__text">
+          Para você viver todos os dias o melhor do Umarizal.
+        </p>
+      </section>
+
+      <section
+        id="plantas"
+        class="section plantas"
+        aria-labelledby="plantas-title"
+      >
+        <h2 id="plantas-title" class="sr-only">Plantas</h2>
+        <div class="container container--wide">
+          <div class="plantas__grid">
+            <article class="planta-card">
+              <h3 class="planta-card__title">Brisa · 486 m²</h3>
+              <div class="planta-card__media">
+                <img
+                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80"
+                  alt="Planta ilustrativa da tipologia Brisa"
+                  width="900"
+                  height="600"
+                  loading="lazy"
+                />
+              </div>
+              <a class="btn btn--olive" href="#contato">Conheça</a>
+            </article>
+            <article class="planta-card">
+              <h3 class="planta-card__title">Serena · 300 a 237 m²</h3>
+              <div class="planta-card__media">
+                <img
+                  src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=900&q=80"
+                  alt="Planta ilustrativa da tipologia Serena"
+                  width="900"
+                  height="600"
+                  loading="lazy"
+                />
+              </div>
+              <a class="btn btn--olive" href="#contato">Conheça</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="showcase-interior"
+        aria-label="Ambiente interno"
+      >
+        <div class="showcase-interior__media">
+          <img
+            src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1920&q=80"
+            alt="Living integrado com vista para o exterior ao pôr do sol"
+            width="1920"
+            height="1080"
+            loading="lazy"
+          />
+        </div>
+      </section>
+
+      <section
+        id="implantacao"
+        class="section section-arte"
+        aria-labelledby="arte-title"
+      >
+        <div class="container">
+          <h2 id="arte-title" class="section-arte__title">
+            A arte inspira a vida e a vida inspira a arte.
+          </h2>
+        </div>
+        <div
+          class="carousel"
+          data-carousel
+          role="region"
+          aria-roledescription="carrossel"
+          aria-label="Equipe e parceiros"
+        >
+          <div class="carousel__viewport">
+            <div class="carousel__track" data-carousel-track>
+              <div class="carousel__slide" data-carousel-slide>
+                <div class="carousel__grid">
+                  <article class="team-card">
+                    <div class="team-card__photo">
+                      <img
+                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"
+                        alt=""
+                        width="400"
+                        height="500"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="team-card__body">
+                      <h3 class="team-card__name">Benedito Abbud</h3>
+                      <p class="team-card__role">Paisagismo</p>
+                      <p class="team-card__bio">
+                        Paisagismo que conecta o empreendimento ao entorno natural,
+                        criando ambientes de contemplação e bem-estar.
+                      </p>
+                    </div>
+                  </article>
+                  <article class="team-card">
+                    <div class="team-card__photo">
+                      <img
+                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80"
+                        alt=""
+                        width="400"
+                        height="500"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="team-card__body">
+                      <h3 class="team-card__name">Carlos Ferreirinha</h3>
+                      <p class="team-card__role">Consultoria</p>
+                      <p class="team-card__bio">
+                        Visão estratégica de mercado e curadoria de experiência
+                        para um produto imobiliário de alto padrão.
+                      </p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+              <div class="carousel__slide" data-carousel-slide>
+                <div class="carousel__grid">
+                  <article class="team-card">
+                    <div class="team-card__photo">
+                      <img
+                        src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80"
+                        alt=""
+                        width="400"
+                        height="500"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="team-card__body">
+                      <h3 class="team-card__name">Marina Costa</h3>
+                      <p class="team-card__role">Arquitetura</p>
+                      <p class="team-card__bio">
+                        Projeto arquitetônico que integra luz natural, ventilação
+                        e proporções generosas em cada ambiente.
+                      </p>
+                    </div>
+                  </article>
+                  <article class="team-card">
+                    <div class="team-card__photo">
+                      <img
+                        src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80"
+                        alt=""
+                        width="400"
+                        height="500"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="team-card__body">
+                      <h3 class="team-card__name">Ana Ribeiro</h3>
+                      <p class="team-card__role">Interiores</p>
+                      <p class="team-card__bio">
+                        Materiais nobres e paleta atemporal para ambientes
+                        acolhedores e sofisticados.
+                      </p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel__controls">
+            <button
+              type="button"
+              class="carousel__arrow"
+              data-carousel-prev
+              aria-label="Slide anterior"
+            >
+              ‹
+            </button>
+            <div class="carousel__dots" data-carousel-dots></div>
+            <button
+              type="button"
+              class="carousel__arrow"
+              data-carousel-next
+              aria-label="Próximo slide"
+            >
+              ›
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="localizacao"
+        class="lead-split"
+        aria-labelledby="lead-split-title"
+      >
+        <h2 id="lead-split-title" class="sr-only">Localização e contato</h2>
+        <div class="lead-split__image">
+          <img
+            src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80"
+            alt="Fachada vertical do empreendimento"
+            width="1200"
+            height="1600"
+            loading="lazy"
+          />
+        </div>
+        <div class="lead-split__panel">
+          <div class="lead-split__panel-bg" aria-hidden="true">
+            <img
+              src="https://images.unsplash.com/photo-1514565131-fce0801e5785?w=1600&q=80"
+              alt=""
+              width="1600"
+              height="900"
+            />
+          </div>
+          <div id="contato" class="lead-split__form">
+            <form
+              class="lead-form"
+              action="#"
+              method="post"
+              aria-labelledby="lead-form-split-title"
+            >
+              <h2 class="lead-form__title" id="lead-form-split-title">
+                Queira viver o extraordinário.
+              </h2>
+              <div class="lead-form__field">
+                <label for="lead-name-split">Nome</label>
+                <input
+                  class="lead-form__input"
+                  id="lead-name-split"
+                  name="name"
+                  type="text"
+                  autocomplete="name"
+                  placeholder="Seu nome"
+                  required
+                />
+              </div>
+              <div class="lead-form__field">
+                <label for="lead-email-split">E-mail</label>
+                <input
+                  class="lead-form__input"
+                  id="lead-email-split"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  placeholder="seu@email.com"
+                  required
+                />
+              </div>
+              <div class="lead-form__field">
+                <label for="lead-phone-split">Telefone</label>
+                <input
+                  class="lead-form__input"
+                  id="lead-phone-split"
+                  name="phone"
+                  type="tel"
+                  autocomplete="tel"
+                  placeholder="(91) 90000-0000"
+                  required
+                />
+              </div>
+              <fieldset class="lead-form__fieldset">
+                <legend class="lead-form__legend">Preferência de contato</legend>
+                <div class="lead-form__radios">
+                  <label class="lead-form__radio">
+                    <input type="radio" name="contact-split" value="whatsapp" checked />
+                    WhatsApp
+                  </label>
+                  <label class="lead-form__radio">
+                    <input type="radio" name="contact-split" value="email" />
+                    E-mail
+                  </label>
+                  <label class="lead-form__radio">
+                    <input type="radio" name="contact-split" value="phone" />
+                    Telefone
+                  </label>
+                </div>
+              </fieldset>
+              <button class="btn btn--olive btn--block" type="submit">
+                Enviar formulário
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer-cta">
+        <div class="container container--wide">
+          <div class="footer-cta__grid">
+            <div class="footer-cta__media">
+              <img
+                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80"
+                alt="Entrada térrea do edifício"
+                width="1200"
+                height="800"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <p class="footer-cta__headline">Dois universos. Uma mesma aura.</p>
+              <p class="footer-cta__specs">
+                Tipologias <strong>Brisa 486 m²</strong> e
+                <strong>Serena 300 a 237 m²</strong>. Realização Quadra · Umarizal,
+                Belém.
+              </p>
+              <div class="footer-cta__logos">
+                <span class="footer-cta__logo-item">Quadra</span>
+                <span class="footer-cta__logo-item">Aura</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <div class="site-footer-bar">
+      <div class="site-footer-bar__inner">
+        <p>© Quadra Aura — Todos os direitos reservados.</p>
+        <div class="site-footer-bar__partners">
+          <span>Parceiro A</span>
+          <span>Parceiro B</span>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/carousel.js" defer></script>
+  </body>
+</html>
