@@ -1,6 +1,7 @@
 .section-arte {
-  background-color: var(--color-cream);
+  background-color: var(--color-header-bg);
   padding-bottom: 0;
+  scroll-margin-top: 5.5rem;
 }
 
 .section-arte__title {

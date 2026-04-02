@@ -1,8 +1,11 @@
 :root {
+  --color-primary: #231a0b;
   --color-cream: #f5f2ed;
   --color-cream-dark: #ebe6df;
-  --color-olive: #3b3d2b;
-  --color-olive-light: #4a4d38;
+  --color-header-bg: #fdfaf5;
+  --color-top-bar-text: #f5f2ed;
+  --color-olive: #231a0b;
+  --color-olive-light: #3a2f1a;
   --color-white: #ffffff;
   --color-gold: #c9a962;
   --color-text: #2c2c28;

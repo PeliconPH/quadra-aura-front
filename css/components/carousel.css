@@ -44,7 +44,7 @@
   background-color: var(--color-white);
   border-radius: var(--radius-lg);
   padding: var(--space-md);
-  box-shadow: 0 8px 32px rgba(59, 61, 43, 0.08);
+  box-shadow: 0 8px 32px rgba(35, 26, 11, 0.08);
   min-height: 220px;
 }
 
@@ -75,8 +75,9 @@
 .team-card__name {
   font-family: var(--font-serif);
   font-size: 1.25rem;
+  font-weight: 600;
   margin-bottom: 0.25rem;
-  color: var(--color-olive);
+  color: var(--color-primary);
 }
 
 .team-card__role {
@@ -103,23 +104,39 @@
 }
 
 .carousel__arrow {
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   border-radius: var(--radius-pill);
-  background-color: var(--color-olive);
-  color: var(--color-white);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: background-color var(--transition), opacity var(--transition);
+  font-size: 1.25rem;
+  line-height: 1;
+  transition: background-color var(--transition), color var(--transition),
+    opacity var(--transition);
 }
 
-.carousel__arrow:hover:not(:disabled) {
+.carousel__arrow[data-carousel-prev] {
+  background-color: #e5e2dc;
+  color: var(--color-primary);
+}
+
+.carousel__arrow[data-carousel-prev]:hover:not(:disabled) {
+  background-color: #d8d4cc;
+}
+
+.carousel__arrow[data-carousel-next] {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.carousel__arrow[data-carousel-next]:hover:not(:disabled) {
   background-color: var(--color-olive-light);
+  color: var(--color-white);
 }
 
 .carousel__arrow:disabled {
-  opacity: 0.35;
+  opacity: 0.4;
   cursor: not-allowed;
 }
 
@@ -132,7 +149,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: rgba(59, 61, 43, 0.25);
+  background-color: rgba(35, 26, 11, 0.22);
   padding: 0;
   border: none;
   cursor: pointer;

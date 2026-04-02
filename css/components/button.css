@@ -55,3 +55,20 @@
   padding-inline: 1.25rem;
   font-size: 0.75rem;
 }
+
+.btn--whatsapp-header {
+  padding: 0.65rem 1.35rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  background-color: var(--color-primary);
+  color: var(--color-cream);
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+}
+
+.btn--whatsapp-header:hover {
+  background-color: var(--color-olive-light);
+  color: var(--color-cream);
+}
