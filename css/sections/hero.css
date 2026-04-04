@@ -74,11 +74,24 @@
 .hero__form-wrap {
   justify-self: center;
   width: 100%;
-  max-width: 420px;
+  max-width: 100%;
+}
+
+@media (min-width: 640px) {
+  .hero__form-wrap {
+    max-width: min(100%, 33rem);
+  }
+}
+
+@media (min-width: 768px) {
+  .hero__form-wrap {
+    max-width: min(100%, 37rem);
+  }
 }
 
 @media (min-width: 1024px) {
   .hero__form-wrap {
     justify-self: end;
+    max-width: min(100%, 41rem);
   }
 }

@@ -58,5 +58,24 @@
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 440px;
+  max-width: 100%;
+}
+
+/* Largura do cartão: mobile usa 100% do painel; sobe o teto para o título em uma linha em telas maiores */
+@media (min-width: 640px) {
+  .lead-split__form {
+    max-width: min(100%, 33rem);
+  }
+}
+
+@media (min-width: 768px) {
+  .lead-split__form {
+    max-width: min(100%, 37rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .lead-split__form {
+    max-width: min(100%, 41rem);
+  }
 }

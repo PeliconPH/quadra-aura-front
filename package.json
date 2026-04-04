@@ -1,0 +1,20 @@
+{
+  "name": "quadra-aura-front",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "tunnel": "cloudflared tunnel --url http://127.0.0.1:5175"
+  },
+  "devDependencies": {
+    "vite": "^6.3.5"
+  },
+  "overrides": {
+    "axios": "^1.7.9",
+    "follow-redirects": "^1.15.9",
+    "debug": "^4.4.0",
+    "yargs-parser": "^21.1.1"
+  }
+}

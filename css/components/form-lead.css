@@ -5,8 +5,9 @@
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-soft);
   color: var(--color-white);
-  max-width: 420px;
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .lead-form__kicker {
@@ -165,4 +166,25 @@
 .lead-form .btn--olive:hover {
   background-color: #4d5140;
   color: var(--color-white);
+}
+
+.lead-form__feedback {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  margin: 0 0 var(--space-sm);
+  min-height: 1.25em;
+}
+
+.lead-form__feedback--success {
+  color: #b8e0c8;
+}
+
+.lead-form__feedback--error {
+  color: #ffb4a8;
+}
+
+.lead-form .btn--lead-submit:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
 }

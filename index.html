@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
@@ -32,10 +32,7 @@
     <div class="top-bar">
       <div class="top-bar__inner">
         <div class="top-bar__left">
-          <a
-            class="top-bar__link"
-            href="mailto:contato@quadra.com.vc"
-          >
+          <a class="top-bar__link" href="mailto:contato@quadra.com.vc">
             <svg
               class="top-bar__icon"
               width="14"
@@ -193,9 +190,9 @@
           <div class="hero__form-wrap">
             <form
               class="lead-form"
-              action="#"
               method="post"
               aria-labelledby="lead-form-hero-title"
+              data-lead-placement="hero"
             >
               <p class="lead-form__kicker">Conheça mais sobre o Quadra Aura</p>
               <h2 class="lead-form__title" id="lead-form-hero-title">
@@ -295,7 +292,11 @@
         </div>
       </section>
 
-      <div class="gallery-strip" role="region" aria-label="Ambientes e materiais">
+      <div
+        class="gallery-strip"
+        role="region"
+        aria-label="Ambientes e materiais"
+      >
         <div class="gallery-strip__track">
           <div class="gallery-strip__item">
             <img
@@ -383,7 +384,9 @@
           </h2>
           <div class="grid-2">
             <div>
-              <p class="intro-verde__sub">Natureza, arte e conforto em equilíbrio.</p>
+              <p class="intro-verde__sub">
+                Natureza, arte e conforto em equilíbrio.
+              </p>
               <p class="intro-verde__text">
                 O Quadra Aura traduz sofisticação urbana com vistas amplas,
                 lazer completo e arquitetura que respeita o entorno. Um endereço
@@ -391,7 +394,9 @@
                 Umarizal ao alcance do dia a dia.
               </p>
               <ul class="intro-verde__list">
-                <li>Lazer completo com áreas verdes e espaços de convivência</li>
+                <li>
+                  Lazer completo com áreas verdes e espaços de convivência
+                </li>
                 <li>Fachadas contemporâneas e acabamentos premium</li>
                 <li>Segurança, portaria e fluxos privativos</li>
                 <li>Proximidade à baía, serviços e mobilidade</li>
@@ -411,10 +416,7 @@
         </div>
       </section>
 
-      <section
-        class="callout-bar"
-        aria-label="Chamada principal"
-      >
+      <section class="callout-bar" aria-label="Chamada principal">
         <p class="callout-bar__text">
           Para você viver todos os dias o melhor do Umarizal.
         </p>
@@ -458,10 +460,7 @@
         </div>
       </section>
 
-      <section
-        class="showcase-interior"
-        aria-label="Ambiente interno"
-      >
+      <section class="showcase-interior" aria-label="Ambiente interno">
         <div class="showcase-interior__media">
           <img
             src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1920&q=80"
@@ -508,8 +507,8 @@
                       <h3 class="team-card__name">Benedito Abbud</h3>
                       <p class="team-card__role">Paisagismo</p>
                       <p class="team-card__bio">
-                        Paisagismo que conecta o empreendimento ao entorno natural,
-                        criando ambientes de contemplação e bem-estar.
+                        Paisagismo que conecta o empreendimento ao entorno
+                        natural, criando ambientes de contemplação e bem-estar.
                       </p>
                     </div>
                   </article>
@@ -550,8 +549,8 @@
                       <h3 class="team-card__name">Marina Costa</h3>
                       <p class="team-card__role">Arquitetura</p>
                       <p class="team-card__bio">
-                        Projeto arquitetônico que integra luz natural, ventilação
-                        e proporções generosas em cada ambiente.
+                        Projeto arquitetônico que integra luz natural,
+                        ventilação e proporções generosas em cada ambiente.
                       </p>
                     </div>
                   </article>
@@ -627,9 +626,9 @@
           <div id="contato" class="lead-split__form">
             <form
               class="lead-form"
-              action="#"
               method="post"
               aria-labelledby="lead-form-split-title"
+              data-lead-placement="split"
             >
               <p class="lead-form__kicker">Conheça mais sobre o Quadra Aura</p>
               <h2 class="lead-form__title" id="lead-form-split-title">
@@ -710,7 +709,9 @@
                   required
                 />
                 <div class="lead-form__privacy-text">
-                  <label for="lead-privacy-split">Aceito e concordo com a</label>
+                  <label for="lead-privacy-split"
+                    >Aceito e concordo com a</label
+                  >
                   <a href="#" class="lead-form__inline-link"
                     >Política de privacidade</a
                   ><span class="lead-form__privacy-dot" aria-hidden="true"
@@ -742,11 +743,13 @@
               />
             </div>
             <div>
-              <p class="footer-cta__headline">Dois universos. Uma mesma aura.</p>
+              <p class="footer-cta__headline">
+                Dois universos. Uma mesma aura.
+              </p>
               <p class="footer-cta__specs">
                 Tipologias <strong>Brisa 486 m²</strong> e
-                <strong>Serena 300 a 237 m²</strong>. Realização Quadra · Umarizal,
-                Belém.
+                <strong>Serena 300 a 237 m²</strong>. Realização Quadra ·
+                Umarizal, Belém.
               </p>
               <div class="footer-cta__logos">
                 <span class="footer-cta__logo-item">Quadra</span>
@@ -770,6 +773,7 @@
 
     <script src="js/carousel.js" defer></script>
     <script src="js/phone-mask.js" defer></script>
+    <script type="module" src="/js/lead-submit.js"></script>
     <script>
       (function () {
         var header = document.getElementById("site-header");
