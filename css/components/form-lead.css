@@ -11,21 +11,30 @@
 }
 
 .lead-form__kicker {
-  font-family: var(--font-sans);
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
+  font-family: var(--font-civane);
+  font-size: 1.00875rem; /* 16.14px */
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.32px;
+  line-height: 1; /* 16.14px / 16.14px */
   margin: 0 0 0.5rem;
-  opacity: 0.88;
+  opacity: 0.92;
 }
 
 .lead-form__title {
-  font-family: var(--font-serif);
-  font-size: clamp(1.35rem, 3vw, 1.75rem);
-  font-weight: 500;
-  font-style: italic;
+  font-family: var(--font-bethany);
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.9px;
+  line-height: 1;
   margin: 0 0 var(--space-md);
-  line-height: 1.3;
+  white-space: nowrap;
+  /* Fallback sem container queries; depois escala com a largura do card (cqi) */
+  font-size: clamp(0.8125rem, 3.5vw + 0.45rem, 2.800625rem);
+  font-size: min(
+    2.800625rem,
+    max(0.8125rem, calc((100cqi - 1.5rem) / 20))
+  );
 }
 
 .lead-form__field {
@@ -159,12 +168,12 @@
 }
 
 .lead-form .btn--olive {
-  background-color: #3e4130;
+  background-color: #5b5e3d;
   color: var(--color-white);
 }
 
 .lead-form .btn--olive:hover {
-  background-color: #4d5140;
+  background-color: #6a6d48;
   color: var(--color-white);
 }
 

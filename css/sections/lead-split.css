@@ -59,6 +59,8 @@
   z-index: 1;
   width: 100%;
   max-width: 100%;
+  container-type: inline-size;
+  container-name: lead;
 }
 
 /* Largura do cartão: mobile usa 100% do painel; sobe o teto para o título em uma linha em telas maiores */

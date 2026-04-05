@@ -1,0 +1,18 @@
+/**
+ * Bethany Elingston (Attract Studio) — uso comercial requer licença.
+ * Exporte do pacote licenciado para WOFF2/woff e coloque em public/fonts/:
+ *   - bethany-elingston-regular.woff2 (recomendado)
+ *   - bethany-elingston-regular.woff (opcional)
+ * Enquanto os arquivos não existirem, o título usa Playfair (fallback em --font-bethany).
+ */
+@font-face {
+  font-family: "Bethany Elingston";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    local("Bethany Elingston Regular"),
+    local("BethanyElingston-Regular"),
+    url("/fonts/bethany-elingston-regular.woff2") format("woff2"),
+    url("/fonts/bethany-elingston-regular.woff") format("woff");
+}

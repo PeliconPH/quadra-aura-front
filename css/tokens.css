@@ -13,6 +13,11 @@
 
   --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
   --font-sans: "Montserrat", system-ui, sans-serif;
+  /* Título dos formulários — Bethany carregada via css/fonts-bethany.css + public/fonts/ */
+  --font-bethany: "Bethany Elingston", "Playfair Display", Georgia,
+    "Times New Roman", serif;
+  /* Kicker dos formulários — Civane via css/fonts-civane.css + public/fonts/ */
+  --font-civane: "Civane", "Montserrat", system-ui, sans-serif;
 
   --radius-sm: 12px;
   --radius-md: 24px;

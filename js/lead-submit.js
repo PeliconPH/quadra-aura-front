@@ -116,7 +116,7 @@
           );
           form.reset();
           var checked = form.querySelector(
-            'input[type="radio"][name^="contact-"][value="manha"]'
+            'input[type="radio"][name^="contact-"][value="whatsapp"]'
           );
           if (checked) checked.checked = true;
         } else {

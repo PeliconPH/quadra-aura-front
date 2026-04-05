@@ -10,6 +10,9 @@
   text-transform: uppercase;
   text-decoration: none;
   border-radius: var(--radius-pill);
+  cursor: pointer;
+  border: none;
+  box-sizing: border-box;
   transition: background-color var(--transition), color var(--transition),
     transform var(--transition);
 }
@@ -41,6 +44,9 @@
   background-color: transparent;
   color: var(--color-white);
   border: 1px solid rgba(255, 255, 255, 0.45);
+  text-transform: none;
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
 
 .btn--outline-light:hover {

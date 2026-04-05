@@ -11,6 +11,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/fonts-bethany.css" />
+    <link rel="stylesheet" href="css/fonts-civane.css" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/layout.css" />
@@ -121,31 +123,29 @@
         <nav class="site-nav" aria-label="Seções principais">
           <ul class="site-nav__list" id="primary-nav">
             <li><a href="#topo">Home</a></li>
-            <li><a href="#projeto">Conheça</a></li>
+            <li><a href="#projeto">Projeto</a></li>
             <li><a href="#plantas">Plantas</a></li>
-            <li><a href="#especialistas">Especialistas</a></li>
-            <li>
-              <a
-                href="https://open.spotify.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Playlist spotify</a
-              >
-            </li>
+            <li><a href="#localizacao">Localização</a></li>
+            <li><a href="#diferenciais">Diferenciais</a></li>
           </ul>
         </nav>
         <div class="site-header__logo">
-          <a class="site-header__logo-link" href="#topo"
-            ><span class="site-header__logo-text">Quadra Aura</span></a
-          >
+          <a class="site-header__logo-link" href="#topo">
+            <img
+              class="site-header__logo-img"
+              src="./assets/images/png/Logo.png"
+              alt="Quadra Aura"
+              width="200"
+              height="40"
+              decoding="async"
+            />
+          </a>
         </div>
         <div class="site-header__actions">
           <a
-            class="btn btn--whatsapp-header"
-            href="https://wa.me/5591991738351"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Fale pelo nosso whatsapp</a
+            class="btn btn--whatsapp-header btn--nav-cta"
+            href="#contato"
+            >Fale com um consultor</a
           >
           <button
             type="button"
@@ -166,7 +166,8 @@
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero__bg">
           <img
-            src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=1920&q=80"
+            class="hero__bg-img"
+            src="./assets/images/png/img-intro.png"
             alt=""
             width="1920"
             height="1080"
@@ -176,118 +177,125 @@
         </div>
         <div class="hero__overlay" aria-hidden="true"></div>
         <div class="hero__inner">
-          <div class="hero__content">
-            <h1 id="hero-title" class="hero__headline">
-              Um lugar à altura da vida que você construiu.
-            </h1>
-            <p class="hero__sub">
-              Apartamentos de <strong>486 m²</strong> e unidades de
-              <strong>300 a 237 m²</strong>, entre o verde e a paisagem da baía,
-              no Umarizal — Belém.
-            </p>
-            <a class="btn btn--cream" href="#projeto">Conheça</a>
-          </div>
-          <div class="hero__form-wrap">
-            <form
-              class="lead-form"
-              method="post"
-              aria-labelledby="lead-form-hero-title"
-              data-lead-placement="hero"
-            >
-              <p class="lead-form__kicker">Conheça mais sobre o Quadra Aura</p>
-              <h2 class="lead-form__title" id="lead-form-hero-title">
-                Queira viver o extraordinário.
-              </h2>
-              <div class="lead-form__field">
-                <label for="lead-name-hero">Informe seu nome</label>
-                <input
-                  class="lead-form__input lead-form__input--pill"
-                  id="lead-name-hero"
-                  name="name"
-                  type="text"
-                  autocomplete="name"
-                  placeholder=""
-                  required
-                />
-              </div>
-              <div class="lead-form__field">
-                <label for="lead-email-hero">Nos informe seu e-mail</label>
-                <input
-                  class="lead-form__input lead-form__input--pill"
-                  id="lead-email-hero"
-                  name="email"
-                  type="email"
-                  autocomplete="email"
-                  placeholder=""
-                  required
-                />
-              </div>
-              <div class="lead-form__field">
-                <label for="lead-phone-hero"
-                  >Nos informe seu WhatsApp com DDD</label
+          <div class="hero__inner-grid">
+            <div class="hero__content">
+              <h1 id="hero-title" class="hero__headline">
+                <span class="hero__headline-line"
+                  >Um lugar à altura da</span
                 >
-                <input
-                  class="lead-form__input lead-form__input--pill"
-                  id="lead-phone-hero"
-                  name="phone"
-                  type="tel"
-                  inputmode="numeric"
-                  autocomplete="tel"
-                  placeholder="(91) 90000-0000"
-                  maxlength="16"
-                  required
-                />
-              </div>
-              <fieldset class="lead-form__fieldset">
-                <legend class="lead-form__legend">Me contate pela:</legend>
-                <div class="lead-form__radios">
-                  <label class="lead-form__radio">
-                    <input
-                      type="radio"
-                      name="contact-hero"
-                      value="manha"
-                      checked
-                    />
-                    manhã
-                  </label>
-                  <label class="lead-form__radio">
-                    <input type="radio" name="contact-hero" value="tarde" />
-                    tarde
-                  </label>
-                  <label class="lead-form__radio">
-                    <input type="radio" name="contact-hero" value="noite" />
-                    noite
-                  </label>
-                  <label class="lead-form__radio">
-                    <input type="radio" name="contact-hero" value="email" />
-                    e-mail
-                  </label>
-                </div>
-              </fieldset>
-              <div class="lead-form__privacy">
-                <input
-                  type="checkbox"
-                  id="lead-privacy-hero"
-                  name="privacy_accept"
-                  class="lead-form__checkbox"
-                  required
-                />
-                <div class="lead-form__privacy-text">
-                  <label for="lead-privacy-hero">Aceito e concordo com a</label>
-                  <a href="#" class="lead-form__inline-link"
-                    >Política de privacidade</a
-                  ><span class="lead-form__privacy-dot" aria-hidden="true"
-                    >.</span
-                  >
-                </div>
-              </div>
-              <button
-                class="btn btn--olive btn--block btn--lead-submit"
-                type="submit"
-              >
-                Enviar formulário
+                <span class="hero__headline-line"
+                  >vida que você construiu.</span
+                >
+              </h1>
+              <p class="hero__sub">
+                Apartamentos de 486&nbsp;m² e de 300 a 257&nbsp;m²<br />
+                Pedro Álvares Cabral, esquina<br />
+                com a Soares Carneiro
+              </p>
+              <button type="button" class="btn btn--outline-light hero__video-btn">
+                Veja o vídeo
               </button>
-            </form>
+            </div>
+            <div class="hero__form-wrap">
+              <form
+                class="lead-form"
+                method="post"
+                aria-labelledby="lead-form-hero-kicker lead-form-hero-title"
+                data-lead-placement="hero"
+              >
+                <p class="lead-form__kicker" id="lead-form-hero-kicker">
+                  Conheça mais sobre o Quadra Aura
+                </p>
+                <h2 class="lead-form__title" id="lead-form-hero-title">
+                  Queira viver o extraordinário.
+                </h2>
+                <div class="lead-form__field">
+                  <label for="lead-name-hero">Informe seu nome</label>
+                  <input
+                    class="lead-form__input lead-form__input--pill"
+                    id="lead-name-hero"
+                    name="name"
+                    type="text"
+                    autocomplete="name"
+                    placeholder=""
+                    required
+                  />
+                </div>
+                <div class="lead-form__field">
+                  <label for="lead-email-hero">Nos informe seu e-mail</label>
+                  <input
+                    class="lead-form__input lead-form__input--pill"
+                    id="lead-email-hero"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    placeholder=""
+                    required
+                  />
+                </div>
+                <div class="lead-form__field">
+                  <label for="lead-phone-hero"
+                    >Nos informe seu WhatsApp com DDD</label
+                  >
+                  <input
+                    class="lead-form__input lead-form__input--pill"
+                    id="lead-phone-hero"
+                    name="phone"
+                    type="tel"
+                    inputmode="numeric"
+                    autocomplete="tel"
+                    placeholder="(91) 90000-0000"
+                    maxlength="16"
+                    required
+                  />
+                </div>
+                <fieldset class="lead-form__fieldset">
+                  <legend class="lead-form__legend">Me contate pela:</legend>
+                  <div class="lead-form__radios">
+                    <label class="lead-form__radio">
+                      <input
+                        type="radio"
+                        name="contact-hero"
+                        value="whatsapp"
+                        checked
+                      />
+                      WhatsApp
+                    </label>
+                    <label class="lead-form__radio">
+                      <input type="radio" name="contact-hero" value="ligacao" />
+                      Ligação
+                    </label>
+                    <label class="lead-form__radio">
+                      <input type="radio" name="contact-hero" value="email" />
+                      E-mail
+                    </label>
+                  </div>
+                </fieldset>
+                <div class="lead-form__privacy">
+                  <input
+                    type="checkbox"
+                    id="lead-privacy-hero"
+                    name="privacy_accept"
+                    class="lead-form__checkbox"
+                    required
+                  />
+                  <div class="lead-form__privacy-text">
+                    <label for="lead-privacy-hero">Aceito e concordo com a</label>
+                    <a href="#" class="lead-form__inline-link"
+                      >Política de privacidade</a
+                    ><span class="lead-form__privacy-dot" aria-hidden="true"
+                      >.</span
+                    >
+                  </div>
+                </div>
+                <button
+                  class="btn btn--olive btn--block btn--lead-submit"
+                  type="submit"
+                >
+                  Enviar formulário
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
@@ -393,13 +401,11 @@
                 para quem busca privacidade, espaço generoso e o melhor do
                 Umarizal ao alcance do dia a dia.
               </p>
-              <ul class="intro-verde__list">
-                <li>
-                  Lazer completo com áreas verdes e espaços de convivência
-                </li>
-                <li>Fachadas contemporâneas e acabamentos premium</li>
-                <li>Segurança, portaria e fluxos privativos</li>
-                <li>Proximidade à baía, serviços e mobilidade</li>
+              <ul class="intro-verde__list" id="diferenciais">
+                <li>4 suítes e ambientes amplos com iluminação natural</li>
+                <li>3 a 4 vagas de garagem privativas</li>
+                <li>Lazer completo, áreas verdes e espaços de convivência</li>
+                <li>Segurança, portaria e proximidade à baía e serviços</li>
               </ul>
               <a class="btn btn--olive" href="#plantas">Saiba mais</a>
             </div>
@@ -431,7 +437,7 @@
         <div class="container container--wide">
           <div class="plantas__grid">
             <article class="planta-card">
-              <h3 class="planta-card__title">Brisa · 486 m²</h3>
+              <h3 class="planta-card__title">Brisa 486 m²</h3>
               <div class="planta-card__media">
                 <img
                   src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80"
@@ -444,7 +450,7 @@
               <a class="btn btn--olive" href="#contato">Conheça</a>
             </article>
             <article class="planta-card">
-              <h3 class="planta-card__title">Serena · 300 a 237 m²</h3>
+              <h3 class="planta-card__title">Serena 300 a 257 m²</h3>
               <div class="planta-card__media">
                 <img
                   src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=900&q=80"
@@ -479,7 +485,7 @@
       >
         <div class="container">
           <h2 id="arte-title" class="section-arte__title">
-            A arte inspira a vida e a vida inspira a arte.
+            A Arte inspira a vida e a vida inspira a arte.
           </h2>
         </div>
         <div
@@ -505,7 +511,7 @@
                     </div>
                     <div class="team-card__body">
                       <h3 class="team-card__name">Benedito Abbud</h3>
-                      <p class="team-card__role">Paisagismo</p>
+                      <p class="team-card__role">Paisagista</p>
                       <p class="team-card__bio">
                         Paisagismo que conecta o empreendimento ao entorno
                         natural, criando ambientes de contemplação e bem-estar.
@@ -524,7 +530,7 @@
                     </div>
                     <div class="team-card__body">
                       <h3 class="team-card__name">Carlos Ferreirinha</h3>
-                      <p class="team-card__role">Consultoria</p>
+                      <p class="team-card__role">Consultoria de luxo</p>
                       <p class="team-card__bio">
                         Visão estratégica de mercado e curadoria de experiência
                         para um produto imobiliário de alto padrão.
@@ -627,10 +633,12 @@
             <form
               class="lead-form"
               method="post"
-              aria-labelledby="lead-form-split-title"
+              aria-labelledby="lead-form-split-kicker lead-form-split-title"
               data-lead-placement="split"
             >
-              <p class="lead-form__kicker">Conheça mais sobre o Quadra Aura</p>
+              <p class="lead-form__kicker" id="lead-form-split-kicker">
+                Conheça mais sobre o Quadra Aura
+              </p>
               <h2 class="lead-form__title" id="lead-form-split-title">
                 Queira viver o extraordinário.
               </h2>
@@ -681,22 +689,18 @@
                     <input
                       type="radio"
                       name="contact-split"
-                      value="manha"
+                      value="whatsapp"
                       checked
                     />
-                    manhã
+                    WhatsApp
                   </label>
                   <label class="lead-form__radio">
-                    <input type="radio" name="contact-split" value="tarde" />
-                    tarde
-                  </label>
-                  <label class="lead-form__radio">
-                    <input type="radio" name="contact-split" value="noite" />
-                    noite
+                    <input type="radio" name="contact-split" value="ligacao" />
+                    Ligação
                   </label>
                   <label class="lead-form__radio">
                     <input type="radio" name="contact-split" value="email" />
-                    e-mail
+                    E-mail
                   </label>
                 </div>
               </fieldset>
@@ -748,7 +752,7 @@
               </p>
               <p class="footer-cta__specs">
                 Tipologias <strong>Brisa 486 m²</strong> e
-                <strong>Serena 300 a 237 m²</strong>. Realização Quadra ·
+                <strong>Serena 300 a 257 m²</strong>. Realização Quadra ·
                 Umarizal, Belém.
               </p>
               <div class="footer-cta__logos">

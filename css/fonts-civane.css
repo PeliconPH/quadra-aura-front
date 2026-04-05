@@ -1,0 +1,17 @@
+/**
+ * Civane (Insigne) — uso comercial requer licença.
+ * Coloque em public/fonts/ (peso 600 / Semibold):
+ *   - civane-semibold.woff2
+ *   - civane-semibold.woff (opcional)
+ */
+@font-face {
+  font-family: "Civane";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src:
+    local("Civane SemiBold"),
+    local("Civane-SemiBold"),
+    url("/fonts/civane-semibold.woff2") format("woff2"),
+    url("/fonts/civane-semibold.woff") format("woff");
+}

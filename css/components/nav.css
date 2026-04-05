@@ -151,22 +151,25 @@
 .site-header__logo {
   justify-self: center;
   text-align: center;
-  max-width: min(100%, 14rem);
+  max-width: min(100%, 16rem);
   min-width: 0;
 }
 
 .site-header__logo-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   color: var(--color-primary);
+  line-height: 0;
 }
 
-.site-header__logo-text {
-  font-family: var(--font-sans);
-  font-size: clamp(1rem, 2.2vw, 1.35rem);
-  font-weight: 200;
-  letter-spacing: 0.38em;
-  text-transform: uppercase;
-  white-space: nowrap;
+.site-header__logo-img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: min(100%, 14rem);
+  max-height: clamp(1.35rem, 3.2vw, 2.125rem);
 }
 
 .site-header__actions {
@@ -179,7 +182,8 @@
 }
 
 .site-header__menu-btn {
-  display: flex;
+  /* Só mobile — desktop usa links na barra */
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -296,13 +300,17 @@
     max-width: none;
   }
 
-  .site-header__logo-text {
-    letter-spacing: 0.28em;
-    font-size: 0.95rem;
+  .site-header__logo-img {
+    max-height: 1.65rem;
+    max-width: min(100%, 11rem);
   }
 
   .site-header__actions {
     flex: 0 0 auto;
+  }
+
+  .site-header__menu-btn {
+    display: flex;
   }
 
   .btn--whatsapp-header {
