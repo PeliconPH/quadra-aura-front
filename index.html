@@ -123,10 +123,17 @@
         <nav class="site-nav" aria-label="Seções principais">
           <ul class="site-nav__list" id="primary-nav">
             <li><a href="#topo">Home</a></li>
-            <li><a href="#projeto">Projeto</a></li>
+            <li><a href="#projeto">Conheça</a></li>
             <li><a href="#plantas">Plantas</a></li>
-            <li><a href="#localizacao">Localização</a></li>
-            <li><a href="#diferenciais">Diferenciais</a></li>
+            <li><a href="#especialistas">Especialistas</a></li>
+            <li>
+              <a
+                href="https://open.spotify.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Playlist Spotify</a
+              >
+            </li>
           </ul>
         </nav>
         <div class="site-header__logo">
@@ -177,32 +184,38 @@
         </div>
         <div class="hero__overlay" aria-hidden="true"></div>
         <div class="hero__inner">
-          <div class="hero__inner-grid">
-            <div class="hero__content">
-              <h1 id="hero-title" class="hero__headline">
-                <span class="hero__headline-line"
-                  >Um lugar à altura da</span
-                >
-                <span class="hero__headline-line"
-                  >vida que você construiu.</span
-                >
-              </h1>
-              <p class="hero__sub">
-                Apartamentos de 486&nbsp;m² e de 300 a 257&nbsp;m²<br />
-                Pedro Álvares Cabral, esquina<br />
-                com a Soares Carneiro
-              </p>
-              <button type="button" class="btn btn--outline-light hero__video-btn">
-                Veja o vídeo
-              </button>
+          <div class="hero__layout">
+            <div class="hero__text-container">
+              <div class="hero__content">
+                <h1 id="hero-title" class="hero__headline">
+                  <span class="hero__headline-line"
+                    >Um lugar à altura da</span
+                  >
+                  <span class="hero__headline-line"
+                    >vida que você construiu.</span
+                  >
+                </h1>
+                <p class="hero__sub">
+                  Apartamentos de 486&nbsp;m² e de 300 a 257&nbsp;m²<br />
+                  Pedro Álvares Cabral, esquina<br />
+                  com a Soares Carneiro
+                </p>
+                <button type="button" class="btn btn--outline-light hero__video-btn">
+                  Veja o vídeo
+                </button>
+              </div>
             </div>
-            <div class="hero__form-wrap">
-              <form
-                class="lead-form"
-                method="post"
-                aria-labelledby="lead-form-hero-kicker lead-form-hero-title"
-                data-lead-placement="hero"
-              >
+            <aside
+              class="hero__form-container"
+              aria-label="Formulário de interesse"
+            >
+              <div class="hero__form-wrap">
+                <form
+                  class="lead-form"
+                  method="post"
+                  aria-labelledby="lead-form-hero-kicker lead-form-hero-title"
+                  data-lead-placement="hero"
+                >
                 <p class="lead-form__kicker" id="lead-form-hero-kicker">
                   Conheça mais sobre o Quadra Aura
                 </p>
@@ -249,26 +262,39 @@
                     required
                   />
                 </div>
-                <fieldset class="lead-form__fieldset">
-                  <legend class="lead-form__legend">Me contate pela:</legend>
-                  <div class="lead-form__radios">
+                <fieldset
+                  class="lead-form__fieldset lead-form__fieldset--contact-row"
+                  aria-labelledby="lead-contact-hero-legend"
+                >
+                  <div class="lead-form__contact-row-inner">
+                    <span
+                      id="lead-contact-hero-legend"
+                      class="lead-form__legend"
+                      >Me contate pela:</span
+                    >
+                  <div class="lead-form__radios lead-form__radios--contact-row">
                     <label class="lead-form__radio">
                       <input
                         type="radio"
                         name="contact-hero"
-                        value="whatsapp"
+                        value="manha"
                         checked
                       />
-                      WhatsApp
+                      manhã
                     </label>
                     <label class="lead-form__radio">
-                      <input type="radio" name="contact-hero" value="ligacao" />
-                      Ligação
+                      <input type="radio" name="contact-hero" value="tarde" />
+                      tarde
+                    </label>
+                    <label class="lead-form__radio">
+                      <input type="radio" name="contact-hero" value="noite" />
+                      noite
                     </label>
                     <label class="lead-form__radio">
                       <input type="radio" name="contact-hero" value="email" />
-                      E-mail
+                      e-mail
                     </label>
+                  </div>
                   </div>
                 </fieldset>
                 <div class="lead-form__privacy">
@@ -294,91 +320,21 @@
                 >
                   Enviar formulário
                 </button>
-              </form>
-            </div>
+                </form>
+              </div>
+            </aside>
           </div>
         </div>
       </section>
 
-      <div
-        class="gallery-strip"
-        role="region"
-        aria-label="Ambientes e materiais"
-      >
-        <div class="gallery-strip__track">
-          <div class="gallery-strip__item">
-            <img
-              src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=300&q=80"
-              alt=""
-              width="300"
-              height="300"
-              loading="lazy"
-            />
-          </div>
-          <div class="gallery-strip__item">
-            <img
-              src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=300&q=80"
-              alt=""
-              width="300"
-              height="300"
-              loading="lazy"
-            />
-          </div>
-          <div class="gallery-strip__item">
-            <img
-              src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=300&q=80"
-              alt=""
-              width="300"
-              height="300"
-              loading="lazy"
-            />
-          </div>
-          <div class="gallery-strip__item">
-            <img
-              src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=300&q=80"
-              alt=""
-              width="300"
-              height="300"
-              loading="lazy"
-            />
-          </div>
-          <div class="gallery-strip__item">
-            <img
-              src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=300&q=80"
-              alt=""
-              width="300"
-              height="300"
-              loading="lazy"
-            />
-          </div>
-          <div class="gallery-strip__item">
-            <img
-              src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=300&q=80"
-              alt=""
-              width="300"
-              height="300"
-              loading="lazy"
-            />
-          </div>
-          <div class="gallery-strip__item">
-            <img
-              src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=300&q=80"
-              alt=""
-              width="300"
-              height="300"
-              loading="lazy"
-            />
-          </div>
-          <div class="gallery-strip__item">
-            <img
-              src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=300&q=80"
-              alt=""
-              width="300"
-              height="300"
-              loading="lazy"
-            />
-          </div>
-        </div>
+      <div class="gallery-strip gallery-strip--divider" role="presentation">
+        <img
+          class="gallery-strip__divider"
+          src="assets/images/png/divider.png"
+          alt=""
+          loading="lazy"
+          decoding="async"
+        />
       </div>
 
       <section
@@ -682,26 +638,39 @@
                   required
                 />
               </div>
-              <fieldset class="lead-form__fieldset">
-                <legend class="lead-form__legend">Me contate pela:</legend>
-                <div class="lead-form__radios">
+              <fieldset
+                class="lead-form__fieldset lead-form__fieldset--contact-row"
+                aria-labelledby="lead-contact-split-legend"
+              >
+                <div class="lead-form__contact-row-inner">
+                  <span
+                    id="lead-contact-split-legend"
+                    class="lead-form__legend"
+                    >Me contate pela:</span
+                  >
+                <div class="lead-form__radios lead-form__radios--contact-row">
                   <label class="lead-form__radio">
                     <input
                       type="radio"
                       name="contact-split"
-                      value="whatsapp"
+                      value="manha"
                       checked
                     />
-                    WhatsApp
+                    manhã
                   </label>
                   <label class="lead-form__radio">
-                    <input type="radio" name="contact-split" value="ligacao" />
-                    Ligação
+                    <input type="radio" name="contact-split" value="tarde" />
+                    tarde
+                  </label>
+                  <label class="lead-form__radio">
+                    <input type="radio" name="contact-split" value="noite" />
+                    noite
                   </label>
                   <label class="lead-form__radio">
                     <input type="radio" name="contact-split" value="email" />
-                    E-mail
+                    e-mail
                   </label>
+                </div>
                 </div>
               </fieldset>
               <div class="lead-form__privacy">

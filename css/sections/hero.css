@@ -4,6 +4,13 @@
   display: flex;
   flex-direction: column;
   color: var(--color-white);
+  overflow-x: hidden;
+}
+
+@media (max-width: 899px) {
+  .hero {
+    min-height: auto;
+  }
 }
 
 .hero__bg {
@@ -46,66 +53,108 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  /* Largura total do viewport: insets do Figma (188+196) + área útil ~1536px */
   max-width: none;
   min-height: min(92vh, 900px);
   margin-inline: auto;
-  padding: var(--space-xl) var(--space-md);
   box-sizing: border-box;
+  /* Mobile: empilhado; margens laterais mínimas */
+  padding: clamp(5.25rem, 14vw, 6rem) clamp(0.75rem, 3vw, 1.25rem)
+    clamp(2rem, 6vw, 3.5rem);
 }
 
-/* Figma (laranja): top 82, right 196, bottom 103, left 188 — frame 1920×~1080 */
-@media (min-width: 1024px) {
+@media (max-width: 899px) {
+  .hero__inner {
+    min-height: auto;
+  }
+}
+
+/* Tablet / desktop estreito: duas colunas + margens que encolhem com o viewport */
+@media (min-width: 900px) {
+  .hero__inner {
+    min-height: min(92vh, 900px);
+    padding-top: clamp(3.25rem, 7vw, 5.125rem);
+    padding-bottom: clamp(2.5rem, 6vw, 6.5rem);
+    padding-inline: clamp(0.65rem, 2.5vw, 1.75rem);
+  }
+}
+
+@media (min-width: 1100px) {
+  .hero__inner {
+    padding-inline: clamp(1.25rem, 5vw, 3.5rem);
+  }
+}
+
+@media (min-width: 1320px) {
+  .hero__inner {
+    padding-inline: clamp(2.5rem, 8vw, 7.5rem);
+  }
+}
+
+/* Figma completo em telas muito largas */
+@media (min-width: 1600px) {
   .hero__inner {
     padding: 82px 196px 103px 188px;
   }
 }
 
-@media (max-width: 1023px) {
-  .hero__inner {
-    padding: clamp(2rem, 6vw, 4rem) clamp(1rem, 4vw, 1.5rem)
-      clamp(2.5rem, 7vw, 5rem);
-  }
-}
-
-.hero__inner-grid {
+/* Grid: 1 coluna (texto → formulário); 2 colunas a partir de 900px */
+.hero__layout {
   flex: 1;
   display: grid;
-  gap: var(--space-xl);
+  grid-template-columns: minmax(0, 1fr);
   align-items: start;
+  gap: clamp(1.35rem, 3.5vw, 2.25rem);
   width: 100%;
   min-height: 0;
 }
 
-@media (min-width: 1024px) {
-  .hero__inner-grid {
-    grid-template-columns: minmax(0, 1fr) minmax(min(100%, 22rem), 41rem);
-    align-items: center;
-    column-gap: clamp(1.75rem, 4vw, 3.5rem);
-    row-gap: var(--space-xl);
-  }
+.hero__text-container,
+.hero__form-container {
+  min-width: 0;
+  position: relative;
+}
 
-  /* Alvo: texto mais em baixo à esquerda; formulário centrado na altura */
-  .hero__content {
-    align-self: end;
-    padding-bottom: 4rem; /* Figma: 64px */
-  }
+/* Texto sempre legível por cima se algo encostar no eixo Z */
+.hero__text-container {
+  z-index: 1;
+}
 
-  .hero__form-wrap {
-    align-self: center;
+.hero__form-container {
+  z-index: 0;
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .hero__layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, min(42.5rem, 44vw));
+    column-gap: clamp(0.65rem, 2vw, 2.25rem);
+    align-items: start;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero__layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, min(42.5rem, 46vw));
+    column-gap: clamp(1rem, 2.5vw, 3rem);
   }
 }
 
 .hero__content {
-  /* Figma: frame ~751×490, gap 32px, padding-bottom 64px (desktop) */
   box-sizing: border-box;
   width: 100%;
-  max-width: min(100%, 46.9375rem); /* 751px */
+  max-width: min(100%, 46.9375rem);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 2rem; /* 32px */
+  gap: clamp(1.25rem, 3vw, 2rem);
   opacity: 1;
+}
+
+@media (min-width: 900px) {
+  .hero__content {
+    max-width: 100%;
+    padding-bottom: 0;
+  }
 }
 
 .hero__headline {
@@ -115,34 +164,49 @@
   font-family: var(--font-bethany);
   font-weight: 400;
   font-style: normal;
-  letter-spacing: -1.52px;
-  font-size: clamp(2.125rem, 4.2vw + 1rem, 4.74625rem); /* até 75.94px */
-  line-height: clamp(2.2rem, 4.3vw + 1.02rem, 4.84125rem); /* 77.46px */
+  letter-spacing: -0.06em;
   margin: 0;
+  max-width: 100%;
   text-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+  font-size: clamp(1.6rem, 4.5vw + 0.35rem, 4.74625rem);
+  line-height: 1.08;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
+/* Faixa “dois lados”: reduz um pouco o título para caber sem invadir o card */
+@media (min-width: 900px) and (max-width: 1199px) {
+  .hero__headline {
+    font-size: clamp(1.75rem, 1.85vw + 1.15rem, 3.15rem);
+    line-height: 1.1;
+  }
+}
+
+/* Permite quebra entre / dentro das linhas para o texto não invadir o card do formulário */
 .hero__headline-line {
   display: block;
-}
-
-@media (min-width: 1024px) {
-  .hero__headline-line {
-    white-space: nowrap;
-  }
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: break-word;
 }
 
 .hero__sub {
   font-family: var(--font-bethany);
   font-weight: 400;
   font-style: normal;
-  font-size: clamp(1.125rem, 2vw + 0.65rem, 2.35rem); /* até 37.6px */
-  line-height: clamp(1.35rem, 2.4vw + 0.75rem, 2.82rem); /* 45.12px */
-  letter-spacing: 0.75px;
+  letter-spacing: 0.05em;
   opacity: 0.5;
   margin: 0;
-  /* Figma: bloco ~710×136 */
   max-width: min(100%, 44.375rem);
+  font-size: clamp(0.95rem, 1.85vw + 0.55rem, 2.35rem);
+  line-height: 1.35;
+}
+
+@media (min-width: 900px) and (max-width: 1199px) {
+  .hero__sub {
+    font-size: clamp(1rem, 1.1vw + 0.7rem, 1.65rem);
+    line-height: 1.4;
+  }
 }
 
 .hero__video-btn {
@@ -154,29 +218,29 @@
   font-family: var(--font-bethany);
   font-weight: 400;
   font-style: normal;
-  font-size: clamp(0.9375rem, 2.5vw, 1.7725rem); /* até 28.36px */
-  line-height: 1; /* 28.36px / 28.36px no máximo */
+  font-size: clamp(0.875rem, 2vw + 0.5rem, 1.7725rem);
+  line-height: 1.2;
   letter-spacing: 0.57px;
-  /* Opacidade só no texto (Figma 0.5); borda do botão mantém contraste */
   color: rgba(255, 255, 255, 0.5);
   opacity: 1;
-  white-space: nowrap;
   text-transform: none;
   border-radius: 100px;
   border: 1px solid rgba(255, 255, 255, 0.45);
-  /* Figma: cápsula ~483×71; caixa do texto ~149×29, uma linha */
   width: min(100%, 30.1875rem);
-  height: 4.4375rem;
-  padding: 21px 170px 21px 164px;
+  height: auto;
+  min-height: 3.25rem;
+  padding: 1rem 1.5rem;
+  white-space: normal;
+  text-align: center;
 }
 
-/* Padding Figma quebra em colunas estreitas; simplifica antes de estourar o texto */
-@media (max-width: 640px) {
+@media (min-width: 1280px) {
   .hero__video-btn {
-    width: 100%;
-    height: auto;
+    height: 4.4375rem;
     min-height: 4.4375rem;
-    padding: 1rem 1.5rem;
+    padding: 21px 170px 21px 164px;
+    white-space: nowrap;
+    line-height: 1;
   }
 }
 
@@ -186,30 +250,18 @@
 }
 
 .hero__form-wrap {
-  /* Container de query aqui — não no .lead-form (inline-size containment colapsava a largura no grid) */
   container-type: inline-size;
   container-name: lead;
-  justify-self: center;
   width: 100%;
-  max-width: 100%;
+  max-width: min(100%, 42.5rem);
+  margin-inline: auto;
   min-width: 0;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 900px) {
   .hero__form-wrap {
-    max-width: min(100%, 33rem);
-  }
-}
-
-@media (min-width: 768px) {
-  .hero__form-wrap {
-    max-width: min(100%, 37rem);
-  }
-}
-
-@media (min-width: 1024px) {
-  .hero__form-wrap {
-    justify-self: end;
-    max-width: min(100%, 41rem);
+    margin-inline: 0;
+    margin-left: auto;
+    max-width: 42.5rem;
   }
 }
