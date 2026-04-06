@@ -5,12 +5,12 @@
 
 .showcase-interior__media {
   width: 100%;
-  max-height: min(85vh, 920px);
   overflow: hidden;
 }
 
-.showcase-interior__media img {
+.showcase-interior__divider {
+  display: block;
   width: 100%;
-  height: min(85vh, 920px);
-  object-fit: cover;
+  height: auto;
+  vertical-align: middle;
 }

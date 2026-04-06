@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/tokens.css" />
@@ -446,7 +446,7 @@
                     >Academia de alta tecnologia</span>
                 </li>
               </ul>
-              <a class="btn btn--olive" href="#plantas">Saiba mais</a>
+              <a class="btn btn--olive btn--arrow" href="#contato">Saiba mais</a>
             </div>
             <div class="intro-verde__media">
               <img
@@ -463,9 +463,11 @@
       </section>
 
       <section class="callout-bar" aria-label="Chamada principal">
-        <p class="callout-bar__text">
-          Para você viver todos os dias o melhor do Umarizal.
-        </p>
+        <div class="callout-bar__pill">
+          <p class="callout-bar__text">
+            Para você viver todos os dias o melhor do Umarizal.
+          </p>
+        </div>
       </section>
 
       <section
@@ -476,31 +478,37 @@
         <h2 id="plantas-title" class="sr-only">Plantas</h2>
         <div class="container container--wide">
           <div class="plantas__grid">
-            <article class="planta-card">
-              <h3 class="planta-card__title">Brisa 486 m²</h3>
+            <article
+              class="planta-card"
+              aria-label="Tipologia Brisa, 486 m²"
+            >
               <div class="planta-card__media">
                 <img
-                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80"
+                  src="./assets/images/png/brisa.png"
                   alt="Planta ilustrativa da tipologia Brisa"
-                  width="900"
-                  height="600"
+                  width="1200"
+                  height="800"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
-              <a class="btn btn--olive" href="#contato">Conheça</a>
+              <a class="btn btn--olive btn--arrow" href="#contato">Saiba mais</a>
             </article>
-            <article class="planta-card">
-              <h3 class="planta-card__title">Serena 300 a 257 m²</h3>
+            <article
+              class="planta-card"
+              aria-label="Tipologia Serena, 300 a 257 m²"
+            >
               <div class="planta-card__media">
                 <img
-                  src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=900&q=80"
+                  src="./assets/images/png/serena.png"
                   alt="Planta ilustrativa da tipologia Serena"
-                  width="900"
-                  height="600"
+                  width="1200"
+                  height="800"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
-              <a class="btn btn--olive" href="#contato">Conheça</a>
+              <a class="btn btn--olive btn--arrow" href="#contato">Saiba mais</a>
             </article>
           </div>
         </div>
@@ -509,11 +517,13 @@
       <section class="showcase-interior" aria-label="Ambiente interno">
         <div class="showcase-interior__media">
           <img
-            src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1920&q=80"
-            alt="Living integrado com vista para o exterior ao pôr do sol"
-            width="1920"
-            height="1080"
+            class="showcase-interior__divider"
+            src="./assets/images/png/divider_especialista.png"
+            alt=""
+            width="2400"
+            height="800"
             loading="lazy"
+            decoding="async"
           />
         </div>
       </section>
@@ -523,7 +533,7 @@
         class="section section-arte"
         aria-labelledby="arte-title"
       >
-        <div class="container">
+        <div class="container container--wide">
           <h2 id="arte-title" class="section-arte__title">
             A Arte inspira a vida e a vida inspira a arte.
           </h2>
@@ -539,41 +549,53 @@
             <div class="carousel__track" data-carousel-track>
               <div class="carousel__slide" data-carousel-slide>
                 <div class="carousel__grid">
-                  <article class="team-card">
+                  <article class="team-card team-card--benedito">
                     <div class="team-card__photo">
                       <img
-                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"
+                        src="./assets/images/png/Benedito_Abbud.png"
                         alt="Retrato de Benedito Abbud"
-                        width="400"
-                        height="500"
+                        width="360"
+                        height="464"
                         loading="lazy"
+                        decoding="async"
                       />
                     </div>
                     <div class="team-card__body">
-                      <h3 class="team-card__name">Benedito Abbud</h3>
-                      <p class="team-card__role">Paisagista</p>
+                      <h3 class="team-card__name">
+                        <span class="team-card__name-line">Benedito</span>
+                        <span class="team-card__name-line">Abbud</span>
+                      </h3>
+                      <p class="team-card__role">Projeto de paisagismo.</p>
                       <p class="team-card__bio">
-                        Paisagismo que conecta o empreendimento ao entorno
-                        natural, criando ambientes de contemplação e bem-estar.
+                        Reconhecido como um dos principais paisagistas do Brasil,
+                        Benedito Abbud assina no Quadra Aura um projeto de
+                        paisagismo que integra jardins, lazer e convivência
+                        externos. Inspirado na convívio.
                       </p>
                     </div>
                   </article>
                   <article class="team-card">
                     <div class="team-card__photo">
                       <img
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80"
+                        src="./assets/images/png/Carlos_Ferreirinha.png"
                         alt="Retrato de Carlos Ferreirinha"
-                        width="400"
-                        height="500"
+                        width="360"
+                        height="464"
                         loading="lazy"
+                        decoding="async"
                       />
                     </div>
                     <div class="team-card__body">
-                      <h3 class="team-card__name">Carlos Ferreirinha</h3>
-                      <p class="team-card__role">Consultoria de luxo</p>
+                      <h3 class="team-card__name">
+                        <span class="team-card__name-line">Carlos</span>
+                        <span class="team-card__name-line">Ferreirinha</span>
+                      </h3>
+                      <p class="team-card__role">Consultor de luxo | MCF</p>
                       <p class="team-card__bio">
-                        Visão estratégica de mercado e curadoria de experiência
-                        para um produto imobiliário de alto padrão.
+                        Reconhecido como um dos principais paisagistas do Brasil,
+                        Benedito Abbud assina no Quadra Aura um projeto de
+                        paisagismo que integra jardins, lazer e convivência
+                        externos. Inspirado na convívio.
                       </p>
                     </div>
                   </article>
@@ -592,7 +614,10 @@
                       />
                     </div>
                     <div class="team-card__body">
-                      <h3 class="team-card__name">Marina Costa</h3>
+                      <h3 class="team-card__name">
+                        <span class="team-card__name-line">Marina</span>
+                        <span class="team-card__name-line">Costa</span>
+                      </h3>
                       <p class="team-card__role">Arquitetura</p>
                       <p class="team-card__bio">
                         Projeto arquitetônico que integra luz natural,
@@ -611,7 +636,10 @@
                       />
                     </div>
                     <div class="team-card__body">
-                      <h3 class="team-card__name">Ana Ribeiro</h3>
+                      <h3 class="team-card__name">
+                        <span class="team-card__name-line">Ana</span>
+                        <span class="team-card__name-line">Ribeiro</span>
+                      </h3>
                       <p class="team-card__role">Interiores</p>
                       <p class="team-card__bio">
                         Materiais nobres e paleta atemporal para ambientes
@@ -630,7 +658,15 @@
               data-carousel-prev
               aria-label="Slide anterior"
             >
-              ‹
+              <img
+                class="carousel__arrow-icon"
+                src="assets/images/svg/arrow_left.svg"
+                alt=""
+                width="75"
+                height="28"
+                decoding="async"
+                aria-hidden="true"
+              />
             </button>
             <div class="carousel__dots" data-carousel-dots></div>
             <button
@@ -639,7 +675,15 @@
               data-carousel-next
               aria-label="Próximo slide"
             >
-              ›
+              <img
+                class="carousel__arrow-icon"
+                src="assets/images/svg/arrow_right.svg"
+                alt=""
+                width="75"
+                height="28"
+                decoding="async"
+                aria-hidden="true"
+              />
             </button>
           </div>
         </div>
@@ -651,22 +695,14 @@
         aria-labelledby="lead-split-title"
       >
         <h2 id="lead-split-title" class="sr-only">Localização e contato</h2>
-        <div class="lead-split__image">
-          <img
-            src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80"
-            alt="Fachada vertical do empreendimento"
-            width="1200"
-            height="1600"
-            loading="lazy"
-          />
-        </div>
         <div class="lead-split__panel">
           <div class="lead-split__panel-bg" aria-hidden="true">
             <img
-              src="https://images.unsplash.com/photo-1514565131-fce0801e5785?w=1600&q=80"
+              src="./assets/images/png/img_forms_secund.png"
               alt=""
-              width="1600"
-              height="900"
+              width="2514"
+              height="1259"
+              loading="lazy"
             />
           </div>
           <div id="contato" class="lead-split__form">
@@ -787,32 +823,21 @@
         </div>
       </section>
 
-      <footer class="footer-cta">
-        <div class="container container--wide">
-          <div class="footer-cta__grid">
-            <div class="footer-cta__media">
-              <img
-                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80"
-                alt="Entrada térrea do edifício"
-                width="1200"
-                height="800"
-                loading="lazy"
-              />
-            </div>
-            <div>
-              <p class="footer-cta__headline">
-                Dois universos. Uma mesma aura.
-              </p>
-              <p class="footer-cta__specs">
-                Tipologias <strong>Brisa 486 m²</strong> e
-                <strong>Serena 300 a 257 m²</strong>. Realização Quadra ·
-                Umarizal, Belém.
-              </p>
-              <div class="footer-cta__logos">
-                <span class="footer-cta__logo-item">Quadra</span>
-                <span class="footer-cta__logo-item">Aura</span>
-              </div>
-            </div>
+      <footer
+        class="footer-cta"
+        aria-label="Quadra Aura — informações e contato"
+      >
+        <div class="footer-cta__frame">
+          <div class="footer-cta__inner">
+            <img
+              class="footer-cta__img"
+              src="./assets/images/png/footer.png"
+              alt="Dois universos. Uma mesma aura. Apartamentos Brisa e Serena, Belém. Wellness Building, canal de vendas e Quadra."
+              width="1488"
+              height="685"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </div>
       </footer>
@@ -820,10 +845,17 @@
 
     <div class="site-footer-bar">
       <div class="site-footer-bar__inner">
-        <p>© Quadra Aura — Todos os direitos reservados.</p>
+        <p>Quadra Engenharia. Todos os direitos reservados © 2026</p>
         <div class="site-footer-bar__partners">
-          <span>Parceiro A</span>
-          <span>Parceiro B</span>
+          <img
+            class="site-footer-bar__partners-mark"
+            src="./assets/images/svg/footer.svg"
+            alt="Parceiros"
+            width="438"
+            height="49"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </div>
     </div>

@@ -32,12 +32,24 @@
 }
 
 .btn--olive {
-  background-color: var(--color-olive);
+  background-color: #353622;
   color: var(--color-white);
 }
 
 .btn--olive:hover {
-  background-color: var(--color-olive-light);
+  background-color: #454833;
+}
+
+.btn--olive.btn--arrow {
+  text-transform: none;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* Seta após o texto (Saiba mais, Conheça, …) */
+.btn--arrow::after {
+  content: " →";
+  white-space: nowrap;
 }
 
 .btn--outline-light {

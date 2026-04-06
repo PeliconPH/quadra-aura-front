@@ -2,6 +2,11 @@
   background-color: var(--color-cream);
 }
 
+/* Âncora no menu (#plantas): folga para o header sticky (ligeiramente acima de #projeto) */
+#plantas.plantas {
+  scroll-margin-top: clamp(3.75rem, 4.25vw, 5rem);
+}
+
 .plantas__grid {
   display: grid;
   gap: var(--space-xl);
@@ -17,23 +22,21 @@
   text-align: center;
 }
 
-.planta-card__title {
-  font-family: var(--font-serif);
-  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
-  color: var(--color-olive);
-  margin-bottom: var(--space-md);
-}
-
 .planta-card__media {
+  background-color: transparent;
   border-radius: var(--radius-lg);
   overflow: hidden;
   margin-bottom: var(--space-md);
-  box-shadow: 0 16px 40px rgba(59, 61, 43, 0.1);
+  box-shadow: none;
 }
 
 .planta-card__media img {
+  display: block;
   width: 100%;
   height: auto;
   min-height: 240px;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
+  box-shadow: none;
+  filter: none;
 }

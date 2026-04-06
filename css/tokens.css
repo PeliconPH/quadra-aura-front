@@ -1,8 +1,8 @@
 :root {
   --color-primary: #231a0b;
-  --color-cream: #f5f2ed;
+  --color-cream: #f6f1ea;
   --color-cream-dark: #ebe6df;
-  --color-header-bg: #fdfaf5;
+  --color-header-bg: #f6f1ea;
   --color-top-bar-text: #f5f2ed;
   --color-olive: #231a0b;
   --color-olive-light: #3a2f1a;
@@ -13,6 +13,7 @@
 
   --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
   --font-sans: "Montserrat", system-ui, sans-serif;
+  --font-inter: "Inter", system-ui, sans-serif;
   /* Título dos formulários — Bethany carregada via css/fonts-bethany.css + public/fonts/ */
   --font-bethany: "Bethany Elingston", "Playfair Display", Georgia,
     "Times New Roman", serif;

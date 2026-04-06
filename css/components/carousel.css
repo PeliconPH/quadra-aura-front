@@ -1,9 +1,11 @@
 .carousel {
   --carousel-count: 1;
   position: relative;
-  max-width: var(--container-wide);
+  width: 100%;
+  max-width: min(1540px, 100%);
   margin-inline: auto;
-  padding-inline: var(--space-md);
+  padding-inline: 0;
+  box-sizing: border-box;
 }
 
 .carousel__viewport {
@@ -20,19 +22,119 @@
 
 .carousel__slide {
   flex: 0 0 calc(100% / var(--carousel-count));
-  padding-inline: 0.25rem;
+  padding-inline: 0;
   box-sizing: border-box;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
 }
 
 .carousel__grid {
   display: grid;
   gap: var(--space-md);
+  min-width: 0;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
   .carousel__grid {
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-lg);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(1.25rem, 3vw, 2.25rem);
+  }
+
+  /* Carrossel (tablet): duas colunas; foto com proporção 360:464 sem medidas fixas */
+  .carousel .team-card {
+    align-items: start;
+    gap: clamp(0.5rem, 1vw, 1rem);
+    min-height: 0;
+    min-width: 0;
+    grid-template-columns: minmax(0, 0.46fr) minmax(0, 1fr);
+  }
+
+  .carousel .team-card__photo {
+    border-radius: 64px;
+    width: 100%;
+    max-width: 360px;
+    min-width: 0;
+    aspect-ratio: 360 / 464;
+    height: auto;
+    justify-self: start;
+    overflow: hidden;
+  }
+
+  .carousel .team-card__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .carousel .team-card__body {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+/* Desktop: foto Figma 360×464; texto em coluna flex sem “1fr” (evita buraco entre subtítulo e bio) */
+@media (min-width: 1024px) {
+  .carousel .team-card {
+    grid-template-columns: 360px minmax(0, 1fr);
+    align-items: start;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .carousel .team-card__photo {
+    width: 360px;
+    max-width: 360px;
+    height: 464px;
+    max-height: 464px;
+    aspect-ratio: unset;
+    flex-shrink: 0;
+  }
+
+  .carousel .team-card__body {
+    min-width: 0;
+    overflow: visible;
+  }
+
+  .carousel .team-card__role {
+    overflow-wrap: break-word;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .carousel .team-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+.carousel .team-card {
+  text-align: left;
+  background-color: var(--color-cream);
+  border-radius: 64px;
+  box-shadow: none;
+  padding-block: clamp(1.1rem, 2.2vw, 1.75rem);
+  padding-inline: clamp(0.65rem, 1.25vw, 1rem);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.carousel .team-card > .team-card__body {
+  min-width: 0;
+}
+
+.carousel .team-card > .team-card__photo {
+  min-width: 0;
+}
+
+@media (min-width: 1024px) {
+  .carousel .team-card > .team-card__photo {
+    min-width: 360px;
   }
 }
 
@@ -57,6 +159,15 @@
   .team-card__photo {
     max-width: 180px;
     margin-inline: auto;
+  }
+
+  .carousel .team-card {
+    text-align: left;
+  }
+
+  .carousel .team-card__photo {
+    margin-inline: 0;
+    max-width: min(360px, 100%);
   }
 }
 
@@ -95,70 +206,162 @@
   line-height: 1.6;
 }
 
+/* Tipografia Figma — todos os cards do carrossel (Bethany + Civane, #2F230F) */
+.carousel .team-card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  width: 100%;
+  max-width: 100%;
+  text-align: left;
+  justify-self: stretch;
+  box-sizing: border-box;
+}
+
+.carousel .team-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.carousel .team-card__name {
+  font-family: var(--font-bethany);
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(2.25rem, 2.5vw + 1.35rem, 4.203125rem); /* máx. ~67px */
+  line-height: 1.199;
+  letter-spacing: 0.02007em;
+  color: #2f230f;
+  margin: 0 0 0.35rem;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: manual;
+  max-width: 100%;
+}
+
+/* Sem nowrap: evita corte no viewport; cada linha = um span (nome / sobrenome) */
+.carousel .team-card__name .team-card__name-line {
+  display: block;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.carousel .team-card__role {
+  font-family: var(--font-civane);
+  font-size: clamp(1rem, 0.35vw + 0.9rem, 1.379375rem); /* máx. 22.07px */
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: 0.0352em; /* 3.52% */
+  text-transform: none;
+  color: #2f230f;
+  margin: 0;
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+
+.carousel .team-card__bio {
+  font-family: var(--font-civane);
+  font-size: clamp(0.9375rem, 0.3vw + 0.85rem, 1.25rem);
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1.2; /* 26.48 / 22.07 */
+  letter-spacing: 0;
+  color: #2f230f;
+  margin: 0;
+  margin-top: clamp(0.7rem, 1.75vw, 1.1rem);
+  overflow-wrap: break-word;
+  min-width: 0;
+  align-self: stretch;
+}
+
 .carousel__controls {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: var(--space-md);
+  justify-content: space-between;
+  width: 100%;
+  max-width: min(1540px, 100%);
+  margin-inline: auto;
   margin-top: var(--space-lg);
 }
 
 .carousel__arrow {
-  width: 48px;
-  height: 48px;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  /* Cápsula horizontal (layout): mais larga que alta */
+  height: clamp(3.25rem, 2.5vw + 2.65rem, 3.625rem);
+  min-width: clamp(4.25rem, 4vw + 3rem, 5.25rem);
+  padding-inline: clamp(1rem, 1.5vw + 0.65rem, 1.5rem);
   border-radius: var(--radius-pill);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
-  line-height: 1;
-  transition: background-color var(--transition), color var(--transition),
-    opacity var(--transition);
-}
-
-.carousel__arrow[data-carousel-prev] {
-  background-color: #e5e2dc;
-  color: var(--color-primary);
-}
-
-.carousel__arrow[data-carousel-prev]:hover:not(:disabled) {
-  background-color: #d8d4cc;
-}
-
-.carousel__arrow[data-carousel-next] {
+  border: none;
+  cursor: pointer;
   background-color: var(--color-primary);
   color: var(--color-white);
+  transition: background-color var(--transition), opacity var(--transition),
+    transform var(--transition);
 }
 
-.carousel__arrow[data-carousel-next]:hover:not(:disabled) {
+.carousel__arrow:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+.carousel__arrow-icon {
+  display: block;
+  flex-shrink: 0;
+  width: auto;
+  height: clamp(0.9375rem, 0.5vw + 0.8rem, 1.3125rem);
+  aspect-ratio: 75 / 28;
+  object-fit: contain;
+}
+
+.carousel__arrow:hover:not(:disabled) {
   background-color: var(--color-olive-light);
-  color: var(--color-white);
 }
 
 .carousel__arrow:disabled {
-  opacity: 0.4;
+  opacity: 0.38;
   cursor: not-allowed;
 }
 
 .carousel__dots {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
-  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  pointer-events: auto;
 }
 
 .carousel__dot {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background-color: rgba(35, 26, 11, 0.22);
   padding: 0;
-  border: none;
+  box-sizing: border-box;
+  border: 2px solid var(--color-primary);
+  background-color: transparent;
   cursor: pointer;
-  transition: background-color var(--transition), transform var(--transition);
+  transition: background-color var(--transition), border-color var(--transition),
+    transform var(--transition);
 }
 
 .carousel__dot[aria-current="true"] {
-  background-color: var(--color-olive);
-  transform: scale(1.15);
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  transform: scale(1.08);
 }
 
 .carousel__dot:focus-visible {
