@@ -2,24 +2,50 @@
   background-color: var(--color-cream);
 }
 
-.intro-verde__headline {
-  font-family: var(--font-serif);
-  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
-  font-weight: 500;
-  font-style: italic;
-  text-align: center;
-  color: var(--color-olive);
-  max-width: 48rem;
-  margin-inline: auto;
-  margin-bottom: var(--space-xl);
-  line-height: 1.35;
+/* Link “Conheça” (#projeto): folga só para o header fixo + um pouco de respiro */
+#projeto.intro-verde {
+  scroll-margin-top: clamp(3.5rem, 3.75vw, 4.5rem);
 }
 
-.intro-verde__sub {
-  font-family: var(--font-serif);
-  font-size: 1.35rem;
+/* Figma: Bethany 59.81px / 71.77px lh / 1.2px tracking — duas linhas fixas */
+.intro-verde__headline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-bethany);
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(2rem, 2.25vw + 1.5rem, 3.738125rem); /* máx. 59.81px */
+  line-height: 1.199; /* 71.77 / 59.81 — escala com o tamanho fluido */
+  letter-spacing: 0.02006em; /* ~1.2px em 59.81px */
+  text-align: center;
   color: var(--color-olive);
-  margin-bottom: var(--space-sm);
+  max-width: 100%;
+  margin-inline: auto;
+  margin-bottom: var(--space-xl);
+}
+
+.intro-verde__headline-line {
+  display: block;
+  white-space: nowrap;
+}
+
+/* Telas estreitas: evita corte lateral com nowrap + overflow-x no body */
+@media (max-width: 480px) {
+  .intro-verde__headline-line {
+    white-space: normal;
+  }
+}
+
+.intro-verde__subtitle {
+  font-family: var(--font-bethany);
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(1.375rem, 1.35vw + 1rem, 2.125rem);
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  color: var(--color-olive);
+  margin: 0 0 var(--space-sm);
 }
 
 .intro-verde__text {
@@ -35,20 +61,44 @@
 .intro-verde__list li {
   display: flex;
   align-items: flex-start;
-  gap: 0.65rem;
-  margin-bottom: 0.65rem;
+  gap: 0.85rem;
+  margin-bottom: 0.85rem;
   font-size: 0.9375rem;
   color: var(--color-text);
 }
 
-.intro-verde__list li::before {
-  content: "";
+/* Ícones: dentro de .intro-verde__list-icon use <img src="..." alt="" /> (só decoração → alt vazio). */
+.intro-verde__list-icon {
   flex-shrink: 0;
-  width: 6px;
-  height: 6px;
-  margin-top: 0.45rem;
-  border-radius: 50%;
-  background-color: var(--color-gold);
+  width: 20px;
+  height: 20px;
+  margin-top: 0.08rem;
+  border-radius: 6px;
+  border: 1px solid rgba(35, 26, 11, 0.12);
+  background-color: rgba(35, 26, 11, 0.04);
+  box-sizing: border-box;
+  opacity: 1;
+}
+
+.intro-verde__list-icon:has(img) {
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.intro-verde__list-icon img {
+  display: block;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  object-position: center;
+  box-sizing: border-box;
+  opacity: 1;
+}
+
+.intro-verde__list-text {
+  flex: 1;
+  min-width: 0;
+  line-height: 1.55;
 }
 
 .intro-verde__media {
