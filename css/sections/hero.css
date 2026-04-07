@@ -124,6 +124,11 @@
   width: 100%;
 }
 
+/* Âncora #contato (CTA / Saiba mais): formulário no hero; folga extra acima do card */
+#contato.hero__form-container {
+  scroll-margin-top: calc(clamp(6.5rem, 7.95vw, 8.4rem) + 24px);
+}
+
 @media (min-width: 900px) {
   .hero__layout {
     grid-template-columns: minmax(0, 1fr) minmax(0, min(42.5rem, 44vw));

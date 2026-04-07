@@ -1,4 +1,4 @@
-/* Secção contato: frame Figma 1540×924, raio 32px, padding 56 / 107, gap 8 */
+/* Secção só com imagem; contato no hero (#contato) */
 .lead-split {
   position: relative;
   width: 100%;
@@ -11,13 +11,9 @@
 
 .lead-split__panel {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 8px;
   width: 100%;
   min-height: clamp(32rem, 75svh, 57.75rem); /* até 924px */
-  padding: clamp(1.5rem, 4vw, 3.5rem) clamp(1rem, 5vw, 6.6875rem);
+  padding: 0;
   border-radius: 32px;
   overflow: hidden;
   box-sizing: border-box;
@@ -26,7 +22,6 @@
 @media (min-width: 900px) {
   .lead-split__panel {
     min-height: 924px;
-    padding: 56px 107px;
   }
 }
 
@@ -42,18 +37,4 @@
   height: 100%;
   object-fit: cover;
   object-position: 55% center;
-}
-
-.lead-split__form {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: min(100%, 41rem);
-  container-type: inline-size;
-  container-name: lead;
-}
-
-/* Âncora #contato (Saiba mais / header): para um pouco mais acima, com folga do header sticky */
-#contato.lead-split__form {
-  scroll-margin-top: clamp(4.25rem, 5vw, 6rem);
 }

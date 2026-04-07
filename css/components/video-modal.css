@@ -1,0 +1,87 @@
+/* Modal de vídeo (YouTube) — abre via [data-video-modal-open] */
+
+.video-modal {
+  width: 100%;
+  max-width: none;
+  max-height: none;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+.video-modal::backdrop {
+  background: rgba(35, 26, 11, 0.82);
+  backdrop-filter: blur(4px);
+}
+
+.video-modal__viewport {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  width: 100%;
+  padding: clamp(1rem, 4vw, 2rem);
+}
+
+.video-modal__panel {
+  position: relative;
+  width: min(960px, 100%);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  background: var(--color-primary);
+}
+
+.video-modal__close {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin: 0;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: var(--radius-pill);
+  background: rgba(35, 26, 11, 0.65);
+  color: var(--color-cream);
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background var(--transition), border-color var(--transition),
+    color var(--transition);
+}
+
+.video-modal__close:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--color-gold);
+  color: var(--color-white);
+}
+
+.video-modal__close:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+.video-modal__ratio {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.video-modal__iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}

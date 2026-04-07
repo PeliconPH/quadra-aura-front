@@ -1,4 +1,4 @@
-/* Mesma lógica lateral que .lead-split; moldura Figma 1540×781, raio 40, padding 48/55/48/42 + 48px à volta da imagem */
+/* Rodapé principal: moldura 1540, raio 40, fundo escuro; imagem do prédio + tipografia Figma */
 .footer-cta {
   width: 100%;
   box-sizing: border-box;
@@ -13,44 +13,123 @@
   max-width: 1540px;
   margin-inline: auto;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  min-height: clamp(26rem, 55svh, 48.8125rem); /* até 781px */
-  padding: clamp(1.25rem, 3vw, 3rem) clamp(1rem, 4vw, 3.4375rem)
-    clamp(1.25rem, 3vw, 3rem) clamp(1rem, 3vw, 2.625rem);
   border-radius: 40px;
   background-color: var(--color-primary);
   overflow: hidden;
+  padding: clamp(1.25rem, 3vw, 3rem) clamp(1rem, 4vw, 3.4375rem)
+    clamp(1.25rem, 3vw, 3rem) clamp(1rem, 3vw, 2.625rem);
 }
 
 @media (min-width: 900px) {
   .footer-cta__frame {
-    min-height: 781px;
     padding: 48px 55px 48px 42px;
   }
 }
 
-.footer-cta__inner {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  flex: 1;
+.footer-cta__layout {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2.75rem);
+  align-items: center;
   min-width: 0;
-  padding: clamp(1rem, 3vw, 3rem);
-  box-sizing: border-box;
 }
 
 @media (min-width: 900px) {
-  .footer-cta__inner {
-    padding: 48px;
+  .footer-cta__layout {
+    grid-template-columns: minmax(0, 0.44fr) minmax(0, 1fr);
+    gap: clamp(1.75rem, 3.5vw, 3rem);
   }
 }
 
-.footer-cta__img {
+.footer-cta__media {
+  min-width: 0;
+}
+
+@media (max-width: 899px) {
+  .footer-cta__media {
+    max-width: min(100%, 22rem);
+    margin-inline: auto;
+  }
+}
+
+.footer-cta__building {
   display: block;
   width: 100%;
   height: auto;
+  border-radius: clamp(1.5rem, 4vw, 2.5rem);
+  object-fit: cover;
+}
+
+.footer-cta__content {
+  color: #e0ceae;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(1rem, 2.2vw, 1.5rem);
+  min-width: 0;
+}
+
+/* Bethany — título: 59.81px / 71.77px / 1.2px */
+.footer-cta__title {
+  font-family: var(--font-bethany);
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(1.85rem, 3.2vw + 1.1rem, 3.738125rem);
+  line-height: 1.199;
+  letter-spacing: 1.2px;
+  margin: 0;
+  max-width: 100%;
+}
+
+.footer-cta__title-line {
+  display: block;
+}
+
+/* Bethany — endereço: 32.58px / 39.09px / 0.65px */
+.footer-cta__lead {
+  font-family: var(--font-bethany);
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(1.05rem, 1.6vw + 0.65rem, 2.03625rem);
+  line-height: 1.199;
+  letter-spacing: 0.65px;
+  margin: 0;
+  max-width: 100%;
+}
+
+.footer-cta__lead-line {
+  display: block;
+}
+
+.footer-cta__contact-img {
+  display: block;
+  width: 100%;
+  max-width: min(100%, 44.8125rem);
+  height: auto;
+}
+
+/* Civane — slogan: 19.1px / 19.1px / -6.45% */
+.footer-cta__tagline {
+  font-family: var(--font-civane);
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(0.9375rem, 1vw + 0.7rem, 1.19375rem);
+  line-height: 1;
+  letter-spacing: -0.0645em;
+  margin: 0;
+  max-width: 100%;
+}
+
+/* Civane — legal: 12.92px semibold / 15.51px / -0.26px */
+.footer-cta__legal {
+  font-family: var(--font-civane);
+  font-weight: 600;
+  font-style: normal;
+  font-size: clamp(0.6875rem, 0.55vw + 0.55rem, 0.8075rem);
+  line-height: 1.2;
+  letter-spacing: -0.26px;
+  margin: 0;
+  max-width: 100%;
+  opacity: 0.92;
 }
 
 .site-footer-bar {
@@ -71,16 +150,38 @@
   gap: var(--space-sm);
 }
 
-.site-footer-bar__partners {
+.site-footer-bar__credits {
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: flex-end;
+  gap: clamp(1rem, 3vw, 2rem);
   flex-shrink: 0;
 }
 
-.site-footer-bar__partners-mark {
+@media (max-width: 767px) {
+  .site-footer-bar__credits {
+    flex-basis: 100%;
+    width: 100%;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+}
+
+.site-footer-bar__credit {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.site-footer-bar__credit-label {
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+}
+
+.site-footer-bar__credit-logo {
   display: block;
   width: auto;
-  max-width: min(100%, 438px);
-  height: auto;
+  height: clamp(1.5rem, 3.5vw, 1.875rem);
+  object-fit: contain;
 }

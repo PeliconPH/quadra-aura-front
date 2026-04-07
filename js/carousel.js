@@ -15,48 +15,85 @@
 
   let index = 0;
 
+  function slidesPerView() {
+    return window.matchMedia("(min-width: 768px)").matches ? 2 : 1;
+  }
+
+  function pageCount() {
+    return Math.max(1, Math.ceil(total / slidesPerView()));
+  }
+
+  function clampIndex() {
+    var max = Math.max(0, pageCount() - 1);
+    if (index > max) index = max;
+  }
+
   function renderDots() {
     if (!dotsContainer) return;
     dotsContainer.innerHTML = "";
-    for (let i = 0; i < total; i++) {
-      const b = document.createElement("button");
+    var pages = pageCount();
+    for (var i = 0; i < pages; i++) {
+      var b = document.createElement("button");
       b.type = "button";
       b.className = "carousel__dot";
       b.setAttribute("aria-label", "Ir para slide " + (i + 1));
       b.setAttribute("aria-current", i === index ? "true" : "false");
-      b.addEventListener("click", () => {
-        index = i;
-        update();
-      });
+      (function (pageIdx) {
+        b.addEventListener("click", function () {
+          index = pageIdx;
+          update();
+        });
+      })(i);
       dotsContainer.appendChild(b);
     }
   }
 
   function update() {
-    var pct = (index * 100) / total;
+    clampIndex();
+    var spv = slidesPerView();
+    var pct = (index * spv * 100) / total;
     track.style.transform = "translateX(-" + pct + "%)";
-    if (prev) prev.disabled = index === 0;
-    if (next) next.disabled = index >= total - 1;
+    // Loop infinito: nunca desabilita as setas
+    if (prev) prev.disabled = false;
+    if (next) next.disabled = false;
     if (dotsContainer) {
-      const dots = dotsContainer.querySelectorAll(".carousel__dot");
-      dots.forEach((d, i) =>
-        d.setAttribute("aria-current", i === index ? "true" : "false")
-      );
+      var dots = dotsContainer.querySelectorAll(".carousel__dot");
+      dots.forEach(function (d, i) {
+        d.setAttribute("aria-current", i === index ? "true" : "false");
+      });
     }
   }
 
+  function onResize() {
+    clampIndex();
+    renderDots();
+    update();
+  }
+
   if (prev) {
-    prev.addEventListener("click", () => {
-      index = Math.max(0, index - 1);
+    prev.addEventListener("click", function () {
+      var lastPage = pageCount() - 1;
+      index = index <= 0 ? lastPage : index - 1;
       update();
     });
   }
 
   if (next) {
-    next.addEventListener("click", () => {
-      index = Math.min(total - 1, index + 1);
+    next.addEventListener("click", function () {
+      var lastPage = pageCount() - 1;
+      index = index >= lastPage ? 0 : index + 1;
       update();
     });
+  }
+
+  window.addEventListener("resize", onResize);
+  if (window.matchMedia) {
+    var mq = window.matchMedia("(min-width: 768px)");
+    if (mq.addEventListener) {
+      mq.addEventListener("change", onResize);
+    } else if (mq.addListener) {
+      mq.addListener(onResize);
+    }
   }
 
   renderDots();

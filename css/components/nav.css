@@ -96,6 +96,25 @@
   flex-shrink: 0;
 }
 
+/* Mobile: mostra só o telefone (sem tagline/instagram) */
+@media (max-width: 639px) {
+  .top-bar__inner {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 0;
+  }
+
+  .top-bar__tagline,
+  .top-bar__right {
+    display: none;
+  }
+
+  /* Esconde o e-mail (mesmo se voltar no HTML) e mantém só o telefone */
+  .top-bar__left a[href^="mailto:"] {
+    display: none;
+  }
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -275,16 +294,16 @@
   }
 
   .site-header__inner {
-    display: flex;
-    flex-wrap: wrap;
-    row-gap: 0.75rem;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
     align-items: center;
+    row-gap: 0.75rem;
   }
 
+  /* Linha 1: logo centrada | Linha 2: CTA + menu nas pontas | Linha 3: dropdown */
   .site-nav {
-    order: 3;
-    flex: 1 1 100%;
+    grid-column: 1;
+    grid-row: 3;
     justify-content: stretch;
     justify-self: stretch;
     overflow-x: visible;
@@ -318,10 +337,11 @@
   }
 
   .site-header__logo {
-    flex: 1 1 auto;
-    text-align: left;
-    justify-self: auto;
-    max-width: none;
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: center;
+    text-align: center;
+    max-width: min(100%, 16rem);
   }
 
   .site-header__logo-img {
@@ -330,7 +350,17 @@
   }
 
   .site-header__actions {
-    flex: 0 0 auto;
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    max-width: none;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .site-header__actions .btn--nav-cta,
+  .site-header__menu-btn {
+    flex-shrink: 0;
   }
 
   .site-header__menu-btn {

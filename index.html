@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="css/components/nav.css" />
     <link rel="stylesheet" href="css/components/gallery-strip.css" />
     <link rel="stylesheet" href="css/components/carousel.css" />
+    <link rel="stylesheet" href="css/components/video-modal.css" />
     <link rel="stylesheet" href="css/sections/hero.css" />
     <link rel="stylesheet" href="css/sections/intro-verde.css" />
     <link rel="stylesheet" href="css/sections/callout-bar.css" />
@@ -190,11 +191,9 @@
             <div class="hero__text-container">
               <div class="hero__content">
                 <h1 id="hero-title" class="hero__headline">
+                  <span class="hero__headline-line">Um lugar à altura</span>
                   <span class="hero__headline-line"
-                    >Um lugar à altura da</span
-                  >
-                  <span class="hero__headline-line"
-                    >vida que você construiu.</span
+                    >da&nbsp;vida que você construiu.</span
                   >
                 </h1>
                 <p class="hero__sub">
@@ -202,12 +201,19 @@
                   Pedro Álvares Cabral, esquina<br />
                   com a Soares Carneiro
                 </p>
-                <button type="button" class="btn btn--outline-light hero__video-btn">
+                <button
+                  type="button"
+                  class="btn btn--outline-light hero__video-btn"
+                  data-video-modal-open
+                  aria-haspopup="dialog"
+                  aria-controls="video-modal"
+                >
                   Veja o vídeo
                 </button>
               </div>
             </div>
             <aside
+              id="contato"
               class="hero__form-container"
               aria-label="Formulário de interesse"
             >
@@ -551,6 +557,75 @@
             <div class="carousel__track" data-carousel-track>
               <div class="carousel__slide" data-carousel-slide>
                 <div class="carousel__grid">
+                  <article class="team-card">
+                    <div class="team-card__photo">
+                      <img
+                        src="./assets/images/png/léo_maia.png"
+                        alt="Retrato de Léo Maia"
+                        width="360"
+                        height="464"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                    <div class="team-card__body">
+                      <h3 class="team-card__name">
+                        <span class="team-card__name-line">Léo</span>
+                        <span class="team-card__name-line">Maia</span>
+                      </h3>
+                      <p class="team-card__role">
+                        Projeto arquitetônico<br />
+                        e de interiores
+                      </p>
+                      <p class="team-card__bio">
+                        No Quadra Aura, Léo Maia assina uma arquitetura autoral
+                        que se revela por completo, das fachadas aos interiores.
+                        Conhecido por criar espaços contemporâneos que equilibram
+                        elegância e conforto, o arquiteto desenvolve um projeto
+                        marcado pela harmonia entre materiais, luz,
+                        funcionalidade e bem-estar. O resultado é uma
+                        experiência estética e sensorial coerente, sofisticada e
+                        feita para permanecer.
+                      </p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+              <div class="carousel__slide" data-carousel-slide>
+                <div class="carousel__grid">
+                  <article class="team-card">
+                    <div class="team-card__photo">
+                      <img
+                        src="./assets/images/png/armando_couceiro.png"
+                        alt="Retrato de Armando Couceiro"
+                        width="360"
+                        height="464"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                    <div class="team-card__body">
+                      <h3 class="team-card__name">
+                        <span class="team-card__name-line">Armando</span>
+                        <span class="team-card__name-line">Couceiro</span>
+                      </h3>
+                      <p class="team-card__role">Projeto arquitetônico</p>
+                      <p class="team-card__bio">
+                        Referência da arquitetura paraense, Armando Couceiro
+                        traduz a identidade de Belém em projetos que valorizam
+                        proporção e elegância. No Quadra Aura, sua visão
+                        arquitetônica estabelece uma base sólida para o
+                        empreendimento, criando uma arquitetura que dialoga com
+                        o clima, a paisagem e o modo de viver da cidade. Um
+                        projeto pensado para atravessar o tempo com equilíbrio
+                        entre sofisticação e funcionalidade.
+                      </p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+              <div class="carousel__slide" data-carousel-slide>
+                <div class="carousel__grid">
                   <article class="team-card team-card--benedito">
                     <div class="team-card__photo">
                       <img
@@ -576,6 +651,10 @@
                       </p>
                     </div>
                   </article>
+                </div>
+              </div>
+              <div class="carousel__slide" data-carousel-slide>
+                <div class="carousel__grid">
                   <article class="team-card">
                     <div class="team-card__photo">
                       <img
@@ -608,44 +687,28 @@
                   <article class="team-card">
                     <div class="team-card__photo">
                       <img
-                        src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80"
-                        alt=""
-                        width="400"
-                        height="500"
+                        src="./assets/images/png/gabriela_e_rafaella.png"
+                        alt="Retrato de Gabriela Hoffmann e Rafaella Panzini"
+                        width="360"
+                        height="464"
                         loading="lazy"
+                        decoding="async"
                       />
                     </div>
                     <div class="team-card__body">
                       <h3 class="team-card__name">
-                        <span class="team-card__name-line">Marina</span>
-                        <span class="team-card__name-line">Costa</span>
+                        <span class="team-card__name-line">Gabriela Hoffmann</span>
+                        <span class="team-card__name-line">e Rafaella Panzini</span>
                       </h3>
-                      <p class="team-card__role">Arquitetura</p>
+                      <p class="team-card__role">Consultoria de Wellness</p>
                       <p class="team-card__bio">
-                        Projeto arquitetônico que integra luz natural,
-                        ventilação e proporções generosas em cada ambiente.
-                      </p>
-                    </div>
-                  </article>
-                  <article class="team-card">
-                    <div class="team-card__photo">
-                      <img
-                        src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80"
-                        alt=""
-                        width="400"
-                        height="500"
-                        loading="lazy"
-                      />
-                    </div>
-                    <div class="team-card__body">
-                      <h3 class="team-card__name">
-                        <span class="team-card__name-line">Ana</span>
-                        <span class="team-card__name-line">Ribeiro</span>
-                      </h3>
-                      <p class="team-card__role">Interiores</p>
-                      <p class="team-card__bio">
-                        Materiais nobres e paleta atemporal para ambientes
-                        acolhedores e sofisticados.
+                        A consultoria de Wellness foi convidada a colaborar no
+                        conceito dos espaços e experiências de bem-estar que o
+                        Quadra Aura proporcionará a seus moradores. Um trabalho
+                        inovador que reúne arquitetura e sensibilidade para
+                        criar um ambiente singular e inspirador, que traz o
+                        bem-estar para o dia a dia e faz do lar um espaço que
+                        promove longevidade.
                       </p>
                     </div>
                   </article>
@@ -696,7 +759,7 @@
         class="lead-split"
         aria-labelledby="lead-split-title"
       >
-        <h2 id="lead-split-title" class="sr-only">Localização e contato</h2>
+        <h2 id="lead-split-title" class="sr-only">Imagem de destaque</h2>
         <div class="lead-split__panel">
           <div class="lead-split__panel-bg" aria-hidden="true">
             <img
@@ -707,139 +770,59 @@
               loading="lazy"
             />
           </div>
-          <div id="contato" class="lead-split__form">
-            <form
-              class="lead-form"
-              method="post"
-              aria-labelledby="lead-form-split-kicker lead-form-split-title"
-              data-lead-placement="split"
-            >
-              <p class="lead-form__kicker" id="lead-form-split-kicker">
-                Conheça mais sobre o Quadra Aura
-              </p>
-              <h2 class="lead-form__title" id="lead-form-split-title">
-                Queira viver o extraordinário.
-              </h2>
-              <div class="lead-form__field">
-                <label for="lead-name-split">Informe seu nome</label>
-                <input
-                  class="lead-form__input lead-form__input--pill"
-                  id="lead-name-split"
-                  name="name"
-                  type="text"
-                  autocomplete="name"
-                  placeholder=""
-                  required
-                />
-              </div>
-              <div class="lead-form__field">
-                <label for="lead-email-split">Nos informe seu e-mail</label>
-                <input
-                  class="lead-form__input lead-form__input--pill"
-                  id="lead-email-split"
-                  name="email"
-                  type="email"
-                  autocomplete="email"
-                  placeholder=""
-                  required
-                />
-              </div>
-              <div class="lead-form__field">
-                <label for="lead-phone-split"
-                  >Nos informe seu WhatsApp com DDD</label
-                >
-                <input
-                  class="lead-form__input lead-form__input--pill"
-                  id="lead-phone-split"
-                  name="phone"
-                  type="tel"
-                  inputmode="numeric"
-                  autocomplete="tel"
-                  placeholder="(91) 90000-0000"
-                  maxlength="16"
-                  required
-                />
-              </div>
-              <fieldset
-                class="lead-form__fieldset lead-form__fieldset--contact-row"
-                aria-labelledby="lead-contact-split-legend"
-              >
-                <div class="lead-form__contact-row-inner">
-                  <span
-                    id="lead-contact-split-legend"
-                    class="lead-form__legend"
-                    >Me contate pela:</span
-                  >
-                <div class="lead-form__radios lead-form__radios--contact-row">
-                  <label class="lead-form__radio">
-                    <input
-                      type="radio"
-                      name="contact-split"
-                      value="manha"
-                      checked
-                    />
-                    manhã
-                  </label>
-                  <label class="lead-form__radio">
-                    <input type="radio" name="contact-split" value="tarde" />
-                    tarde
-                  </label>
-                  <label class="lead-form__radio">
-                    <input type="radio" name="contact-split" value="noite" />
-                    noite
-                  </label>
-                  <label class="lead-form__radio">
-                    <input type="radio" name="contact-split" value="email" />
-                    e-mail
-                  </label>
-                </div>
-                </div>
-              </fieldset>
-              <div class="lead-form__privacy">
-                <input
-                  type="checkbox"
-                  id="lead-privacy-split"
-                  name="privacy_accept"
-                  class="lead-form__checkbox"
-                  required
-                />
-                <div class="lead-form__privacy-text">
-                  <label for="lead-privacy-split"
-                    >Aceito e concordo com a</label
-                  >
-                  <a href="#" class="lead-form__inline-link"
-                    >Política de privacidade</a
-                  ><span class="lead-form__privacy-dot" aria-hidden="true"
-                    >.</span
-                  >
-                </div>
-              </div>
-              <button
-                class="btn btn--olive btn--block btn--lead-submit"
-                type="submit"
-              >
-                Enviar formulário
-              </button>
-            </form>
-          </div>
         </div>
       </section>
 
       <footer
         class="footer-cta"
-        aria-label="Quadra Aura — informações e contato"
+        aria-labelledby="footer-cta-heading"
       >
         <div class="footer-cta__frame">
-          <div class="footer-cta__inner">
-            <img
-              class="footer-cta__img"
-              src="./assets/images/png/footer.png"
-              alt="Dois universos. Uma mesma aura. Apartamentos Brisa e Serena, Belém. Wellness Building, canal de vendas e Quadra."
-              width="1488"
-              height="685"
-              loading="lazy"
-              decoding="async"
-            />
+          <div class="footer-cta__layout">
+            <div class="footer-cta__media">
+              <img
+                class="footer-cta__building"
+                src="./assets/images/png/footer.png"
+                alt="Fachada do empreendimento Quadra Aura — torre residencial com varandas orgânicas e vegetação."
+                width="698"
+                height="685"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="footer-cta__content">
+              <h2 class="footer-cta__title" id="footer-cta-heading">
+                <span class="footer-cta__title-line">Dois universos.</span>
+                <span class="footer-cta__title-line">Uma mesma aura.</span>
+              </h2>
+              <p class="footer-cta__lead">
+                <span class="footer-cta__lead-line"
+                  >Apartamentos de 486m2 e de 300 a 257m2</span
+                >
+                <span class="footer-cta__lead-line"
+                  >Pedro Álvares Cabral, esquina com a Soares Carneiro.</span
+                >
+              </p>
+              <img
+                class="footer-cta__contact-img"
+                src="./assets/images/png/contact.png"
+                alt="O 1º Wellness Building de Belém. Quadra Aura. Canal de vendas: (91) 99173-8351, quadra.com.vc. Construção e administração Quadra."
+                width="717"
+                height="113"
+                loading="lazy"
+                decoding="async"
+              />
+              <p class="footer-cta__tagline">
+                Projetado para acompanhar seu ritmo. Construído por quem sabe
+                onde você merece chegar.
+              </p>
+              <p class="footer-cta__legal">
+                Imagens meramente ilustrativas. Móveis, objetos e acabamentos são
+                sugestões de decoração e não fazem parte do contrato.
+                Informações oficiais constam no memorial descritivo e demais
+                documentos do empreendimento. Projeto sujeito a alterações.
+              </p>
+            </div>
           </div>
         </div>
       </footer>
@@ -848,21 +831,71 @@
     <div class="site-footer-bar">
       <div class="site-footer-bar__inner">
         <p>Quadra Engenharia. Todos os direitos reservados © 2026</p>
-        <div class="site-footer-bar__partners">
-          <img
-            class="site-footer-bar__partners-mark"
-            src="./assets/images/svg/footer.svg"
-            alt="Parceiros"
-            width="438"
-            height="49"
-            loading="lazy"
-            decoding="async"
-          />
+        <div class="site-footer-bar__credits">
+          <!--
+          <div class="site-footer-bar__credit">
+            <span class="site-footer-bar__credit-label">Design by</span>
+            <img
+              class="site-footer-bar__credit-logo"
+              src="./assets/images/svg/g.svg"
+              alt="G"
+              width="35"
+              height="49"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          -->
+          <div class="site-footer-bar__credit">
+            <span class="site-footer-bar__credit-label">Developed by</span>
+            <img
+              class="site-footer-bar__credit-logo"
+              src="./assets/images/svg/alpina.svg"
+              alt="Alpina"
+              width="62"
+              height="44"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
         </div>
       </div>
     </div>
 
+    <dialog
+      id="video-modal"
+      class="video-modal"
+      aria-modal="true"
+      aria-labelledby="video-modal-title"
+    >
+      <div class="video-modal__viewport">
+        <div class="video-modal__panel">
+          <button
+            type="button"
+            class="video-modal__close"
+            data-video-modal-close
+            aria-label="Fechar vídeo"
+          >
+            ×
+          </button>
+          <p id="video-modal-title" class="sr-only">
+            Vídeo de apresentação Quadra Aura no YouTube
+          </p>
+          <div class="video-modal__ratio">
+            <iframe
+              class="video-modal__iframe"
+              data-video-modal-iframe
+              title="Quadra Aura — vídeo no YouTube"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </dialog>
     <script src="js/carousel.js" defer></script>
+    <script src="js/video-modal.js" defer></script>
     <script src="js/phone-mask.js" defer></script>
     <script type="module" src="/js/lead-submit.js"></script>
     <script>
