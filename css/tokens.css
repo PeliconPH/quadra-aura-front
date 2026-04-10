@@ -35,6 +35,8 @@
 
   --container-max: 1200px;
   --container-wide: 1400px;
+  /* Largura máxima dos dois lead forms (antes 38.5rem ≈ 616px) */
+  --lead-form-max: 37.25rem;
 
   --bp-md: 640px;
   --bp-lg: 1024px;

@@ -134,7 +134,7 @@
 
 @media (min-width: 900px) {
   .hero__layout {
-    grid-template-columns: minmax(0, 1fr) minmax(0, min(38.5rem, 44vw));
+    grid-template-columns: minmax(0, 1fr) minmax(0, min(var(--lead-form-max), 44vw));
     column-gap: clamp(0.65rem, 2vw, 2.25rem);
     /* Mesma altura nas duas colunas: texto + botão agrupados no rodapé da esquerda */
     align-items: stretch;
@@ -157,7 +157,7 @@
 
 @media (min-width: 1200px) {
   .hero__layout {
-    grid-template-columns: minmax(0, 1fr) minmax(0, min(38.5rem, 46vw));
+    grid-template-columns: minmax(0, 1fr) minmax(0, min(var(--lead-form-max), 46vw));
     column-gap: clamp(1rem, 2.5vw, 3rem);
   }
 }
@@ -318,7 +318,7 @@
   container-type: inline-size;
   container-name: lead;
   width: 100%;
-  max-width: min(100%, 38.5rem);
+  max-width: min(100%, var(--lead-form-max));
   margin-inline: auto;
   min-width: 0;
 }
@@ -327,6 +327,6 @@
   .hero__form-wrap {
     margin-inline: 0;
     margin-left: auto;
-    max-width: 38.5rem;
+    max-width: var(--lead-form-max);
   }
 }

@@ -50,14 +50,20 @@
 
   var viewport = root.querySelector(".carousel__viewport");
 
+  /** Altura fixa = maior entre todas as “páginas”, para os botões não subirem/desçerem ao trocar slide */
   function syncViewportHeight() {
     if (!viewport) return;
     var spv = slidesPerView();
-    var start = index * spv;
+    var pages = pageCount();
     var maxH = 0;
-    for (var i = start; i < Math.min(start + spv, total); i++) {
-      var h = slides[i].getBoundingClientRect().height;
-      if (h > maxH) maxH = h;
+    for (var p = 0; p < pages; p++) {
+      var start = p * spv;
+      var pageMax = 0;
+      for (var i = start; i < Math.min(start + spv, total); i++) {
+        var h = slides[i].getBoundingClientRect().height;
+        if (h > pageMax) pageMax = h;
+      }
+      if (pageMax > maxH) maxH = pageMax;
     }
     if (maxH > 0) viewport.style.height = maxH + "px";
   }
