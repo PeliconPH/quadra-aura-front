@@ -12,10 +12,14 @@
   overflow: hidden;
   border-radius: var(--radius-lg);
   width: 100%;
+  /* Altura ajustada em JS ao máximo dos slides visíveis (1 ou 2) */
+  transition: height 0.35s ease;
 }
 
 .carousel__track {
   display: flex;
+  /* Evita esticar todos os slides à altura do card mais alto (buraco até os botões) */
+  align-items: flex-start;
   /* Mobile: 1 card por viewport — track = N × largura do viewport */
   width: calc(100% * var(--carousel-count));
   transition: transform 0.45s ease;
@@ -51,7 +55,7 @@
     gap: clamp(1.25rem, 3vw, 2.25rem);
   }
 
-  /* Carrossel (tablet): foto com proporção 360:464 sem medidas fixas */
+  /* Carrossel (tablet): moldura na proporção das fotos (360×464) — cover preenche com pouco corte */
   .carousel .team-card {
     align-items: start;
     gap: clamp(0.5rem, 1vw, 1rem);
@@ -62,7 +66,7 @@
 
   .carousel .team-card__photo {
     width: 100%;
-    max-width: 360px;
+    max-width: 330px;
     min-width: 0;
     aspect-ratio: 360 / 464;
     height: auto;
@@ -83,21 +87,21 @@
   }
 }
 
-/* Desktop: foto Figma 360×464; texto em coluna flex sem “1fr” (evita buraco entre subtítulo e bio) */
+/* Desktop: coluna 330px; altura da foto segue 360:464 (~425px) */
 @media (min-width: 1024px) {
   .carousel .team-card {
-    grid-template-columns: 360px minmax(0, 1fr);
+    grid-template-columns: 330px minmax(0, 1fr);
     align-items: start;
     width: 100%;
     max-width: 100%;
   }
 
   .carousel .team-card__photo {
-    width: 360px;
-    max-width: 360px;
-    height: 464px;
-    max-height: 464px;
-    aspect-ratio: unset;
+    width: 330px;
+    max-width: 330px;
+    height: auto;
+    max-height: none;
+    aspect-ratio: 360 / 464;
     flex-shrink: 0;
   }
 
@@ -119,7 +123,9 @@
 
   .carousel .team-card__photo {
     width: 100%;
-    max-width: min(252px, 78vw);
+    max-width: min(232px, 74vw);
+    aspect-ratio: 360 / 464;
+    height: auto;
     justify-self: start;
   }
 }
@@ -130,7 +136,11 @@
   border-radius: 64px;
   box-shadow: none;
   padding-block: clamp(1.1rem, 2.2vw, 1.75rem);
-  padding-inline: clamp(0.65rem, 1.25vw, 1rem);
+  padding-inline: clamp(
+    calc(0.65rem + var(--page-pad-plus)),
+    calc(1.25vw + var(--page-pad-plus)),
+    calc(1rem + var(--page-pad-plus))
+  );
   width: 100%;
   max-width: 100%;
   min-width: 0;
@@ -147,7 +157,7 @@
 
 @media (min-width: 1024px) {
   .carousel .team-card > .team-card__photo {
-    min-width: 360px;
+    min-width: 330px;
   }
 }
 
@@ -180,7 +190,7 @@
 
   .carousel .team-card__photo {
     margin-inline: 0;
-    max-width: min(300px, 100%);
+    max-width: min(276px, 100%);
   }
 }
 
@@ -223,6 +233,7 @@
 .carousel .team-card__photo {
   border-radius: clamp(2rem, 6vw + 1.25rem, 4rem);
   overflow: hidden;
+  aspect-ratio: 360 / 464;
 }
 
 /* Tipografia Figma — todos os cards do carrossel (Bethany + Civane, #2F230F) */
@@ -251,7 +262,11 @@
   font-family: var(--font-bethany);
   font-weight: 400;
   font-style: normal;
-  font-size: clamp(2.25rem, 2.5vw + 1.35rem, 4.203125rem); /* máx. ~67px */
+  font-size: clamp(
+    calc(2.25rem - 4px),
+    calc(2.5vw + 1.35rem - 4px),
+    calc(4.203125rem - 4px)
+  );
   line-height: 1.199;
   letter-spacing: 0.02007em;
   color: #2f230f;
@@ -269,9 +284,33 @@
   word-break: normal;
 }
 
+/* Último card: exatamente 2 linhas (evita quebra em 3–4 por coluna estreita) */
+.carousel .team-card--wellness-duo .team-card__name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 100%;
+}
+
+.carousel .team-card--wellness-duo .team-card__name-line {
+  display: block;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+@media (max-width: 380px) {
+  .carousel .team-card--wellness-duo .team-card__name-line {
+    white-space: normal;
+  }
+}
+
 .carousel .team-card__role {
   font-family: var(--font-civane);
-  font-size: clamp(1rem, 0.35vw + 0.9rem, 1.379375rem); /* máx. 22.07px */
+  font-size: clamp(
+    calc(1rem - 4px),
+    calc(0.35vw + 0.9rem - 4px),
+    calc(1.379375rem - 4px)
+  );
   font-weight: 600;
   font-style: normal;
   line-height: 1;
@@ -285,7 +324,11 @@
 
 .carousel .team-card__bio {
   font-family: var(--font-civane);
-  font-size: clamp(0.9375rem, 0.3vw + 0.85rem, 1.25rem);
+  font-size: clamp(
+    calc(0.9375rem - 4px),
+    calc(0.3vw + 0.85rem - 4px),
+    calc(1.25rem - 4px)
+  );
   font-weight: 600;
   font-style: normal;
   line-height: 1.2; /* 26.48 / 22.07 */
@@ -306,7 +349,10 @@
   width: 100%;
   max-width: min(1540px, 100%);
   margin-inline: auto;
-  margin-top: var(--space-lg);
+  /* 32px abaixo do conteúdo do carrossel; setas mais próximas da área das fotos */
+  margin-top: 32px;
+  padding-inline: calc(32px + var(--page-pad-plus));
+  box-sizing: border-box;
 }
 
 .carousel__arrow {
@@ -363,17 +409,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.45rem;
+  gap: 1.55rem;
   pointer-events: auto;
 }
 
 .carousel__dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
   padding: 0;
   box-sizing: border-box;
-  border: 2px solid var(--color-primary);
+  border: 1px solid var(--color-primary);
   background-color: transparent;
   cursor: pointer;
   transition:
@@ -391,4 +437,19 @@
 .carousel__dot:focus-visible {
   outline: 2px solid var(--color-gold);
   outline-offset: 2px;
+}
+
+@media (max-width: 767px) {
+  .carousel__dots {
+    gap: 1.1rem;
+  }
+
+  .carousel__dot {
+    width: 17px;
+    height: 17px;
+  }
+
+  .carousel__dot[aria-current="true"] {
+    transform: scale(1.05);
+  }
 }

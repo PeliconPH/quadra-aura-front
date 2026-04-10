@@ -2,7 +2,10 @@
 .footer-cta {
   width: 100%;
   box-sizing: border-box;
-  padding-inline: max(1rem, calc((100vw - 1540px) / 2));
+  padding-inline: max(
+    calc(1rem + var(--page-pad-plus)),
+    calc((100vw - 1540px) / 2 + var(--page-pad-plus))
+  );
   padding-block: 0;
   margin: 0;
   background: transparent;
@@ -16,8 +19,18 @@
   border-radius: 40px;
   background-color: var(--color-primary);
   overflow: hidden;
-  padding: clamp(1.25rem, 3vw, 3rem) clamp(1rem, 4vw, 3.4375rem)
-    clamp(1.25rem, 3vw, 3rem) clamp(1rem, 3vw, 2.625rem);
+  padding: clamp(1.25rem, 3vw, 3rem)
+    clamp(
+      calc(1rem + var(--page-pad-plus)),
+      calc(4vw + var(--page-pad-plus)),
+      calc(3.4375rem + var(--page-pad-plus))
+    )
+    clamp(1.25rem, 3vw, 3rem)
+    clamp(
+      calc(1rem + var(--page-pad-plus)),
+      calc(3vw + var(--page-pad-plus)),
+      calc(2.625rem + var(--page-pad-plus))
+    );
 }
 
 @media (min-width: 900px) {

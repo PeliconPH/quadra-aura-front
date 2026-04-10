@@ -1,28 +1,32 @@
-/* Secção só com imagem; contato no hero (#contato) */
+/* Banner: altura/largura = formulário + padding (top 56, right 100, bottom 56) */
 .lead-split {
   position: relative;
   width: 100%;
   box-sizing: border-box;
   /* Em 1920px → (1920 − 1540) / 2 = 190px; em viewports menores → 1rem mínimo */
-  padding-inline: max(1rem, calc((100vw - 1540px) / 2));
-  /* Espaço até a secção seguinte (footer castanho) — Figma 64px */
+  padding-inline: max(
+    calc(1rem + var(--page-pad-plus)),
+    calc((100vw - 1540px) / 2 + var(--page-pad-plus))
+  );
   padding-bottom: 64px;
 }
 
+.lead-split__stack {
+  position: relative;
+  width: 100%;
+  border-radius: 32px;
+  overflow: hidden;
+}
+
+/* Cresce com o conteúdo (inner); o fundo acompanha via .panel-bg inset 0 */
 .lead-split__panel {
   position: relative;
   width: 100%;
-  min-height: clamp(32rem, 75svh, 57.75rem); /* até 924px */
+  min-height: 0;
   padding: 0;
-  border-radius: 32px;
+  border-radius: inherit;
   overflow: hidden;
   box-sizing: border-box;
-}
-
-@media (min-width: 900px) {
-  .lead-split__panel {
-    min-height: 924px;
-  }
 }
 
 .lead-split__panel-bg {
@@ -37,4 +41,93 @@
   height: 100%;
   object-fit: cover;
   object-position: 55% center;
+}
+
+/* Espaço entre borda da imagem e o bloco do formulário (grid) */
+.lead-split__inner {
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  padding-top: 56px;
+  padding-right: 100px;
+  padding-bottom: 56px;
+  padding-left: 0;
+}
+
+/* Mesmo grid que .hero__layout (sem faixa entre coluna vazia e o form no mobile) */
+.lead-split__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  column-gap: clamp(1.35rem, 3.5vw, 2.25rem);
+  row-gap: 0;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+
+.lead-split__spacer,
+.lead-split .hero__form-container {
+  min-width: 0;
+  position: relative;
+}
+
+@media (min-width: 900px) {
+  .lead-split__spacer {
+    overflow-x: clip;
+  }
+
+  .lead-split__layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, min(38.5rem, 44vw));
+    column-gap: clamp(0.65rem, 2vw, 2.25rem);
+    row-gap: clamp(1.35rem, 3.5vw, 2.25rem);
+    align-items: stretch;
+  }
+
+  .lead-split__spacer {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .lead-split__layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, min(38.5rem, 46vw));
+    column-gap: clamp(1rem, 2.5vw, 3rem);
+  }
+}
+
+/* Âncora #contato (CTAs) */
+.lead-split #contato {
+  scroll-margin-top: calc(clamp(6.5rem, 7.95vw, 8.4rem) + 24px);
+}
+
+/* Segundo formulário: painel do card com fundo mais transparente (hero segue 0.6) */
+.lead-split__form-wrap .lead-form {
+  background-color: rgba(35, 26, 11, 0.4);
+}
+
+/* Mobile: padding equilibrado + formulário centrado no banner */
+@media (max-width: 899px) {
+  .lead-split__inner {
+    padding-top: calc(56px + var(--page-pad-plus));
+    padding-bottom: calc(56px + var(--page-pad-plus));
+    padding-inline: clamp(
+      calc(1rem + var(--page-pad-plus)),
+      calc(4vw + var(--page-pad-plus)),
+      calc(1.5rem + var(--page-pad-plus))
+    );
+  }
+
+  .lead-split__layout {
+    justify-items: center;
+  }
+
+  .lead-split .hero__form-container {
+    justify-self: center;
+    width: min(100%, 38.5rem);
+  }
 }

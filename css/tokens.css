@@ -25,6 +25,7 @@
   --radius-lg: 32px;
   --radius-pill: 999px;
 
+  --page-pad-plus: 0px;
   --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 1.5rem;
@@ -41,4 +42,17 @@
 
   --shadow-soft: 0 24px 48px rgba(59, 61, 43, 0.25);
   --transition: 0.25s ease;
+}
+
+/* Mobile: acrescenta 8px ao ritmo de padding / margens (tokens + clamps que usam --page-pad-plus) */
+@media (max-width: 899px) {
+  :root {
+    --page-pad-plus: 8px;
+    --space-xs: calc(0.5rem + var(--page-pad-plus));
+    --space-sm: calc(1rem + var(--page-pad-plus));
+    --space-md: calc(1.5rem + var(--page-pad-plus));
+    --space-lg: calc(2.5rem + var(--page-pad-plus));
+    --space-xl: calc(4rem + var(--page-pad-plus));
+    --space-2xl: calc(6rem + var(--page-pad-plus));
+  }
 }

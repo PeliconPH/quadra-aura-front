@@ -152,9 +152,7 @@
           </a>
         </div>
         <div class="site-header__actions">
-          <a
-            class="btn btn--whatsapp-header btn--nav-cta"
-            href="#contato"
+          <a class="btn btn--whatsapp-header btn--nav-cta" href="#contato"
             >Fale com um consultor</a
           >
           <button
@@ -191,15 +189,22 @@
             <div class="hero__text-container">
               <div class="hero__content">
                 <h1 id="hero-title" class="hero__headline">
-                  <span class="hero__headline-line">Um lugar à altura</span>
+                  <span class="hero__headline-line">Um lugar à altura da</span>
                   <span class="hero__headline-line"
-                    >da&nbsp;vida que você construiu.</span
+                    >vida que você construiu.</span
                   >
                 </h1>
                 <p class="hero__sub">
-                  Apartamentos de 486&nbsp;m² e de 300 a 257&nbsp;m²<br />
-                  Pedro Álvares Cabral, esquina<br />
-                  com a Soares Carneiro
+                  <span class="hero__sub-line"
+                    >Apartamentos de 486&nbsp;m² e de
+                    <span class="hero__sub-metric"
+                      >300 a 257&nbsp;m²</span
+                    ></span
+                  >
+                  <span class="hero__sub-line"
+                    >Pedro Álvares Cabral, esquina</span
+                  >
+                  <span class="hero__sub-line">com a Soares Carneiro</span>
                 </p>
                 <button
                   type="button"
@@ -213,7 +218,6 @@
               </div>
             </div>
             <aside
-              id="contato"
               class="hero__form-container"
               aria-label="Formulário de interesse"
             >
@@ -224,110 +228,126 @@
                   aria-labelledby="lead-form-hero-kicker lead-form-hero-title"
                   data-lead-placement="hero"
                 >
-                <p class="lead-form__kicker" id="lead-form-hero-kicker">
-                  Conheça mais sobre o Quadra Aura
-                </p>
-                <h2 class="lead-form__title" id="lead-form-hero-title">
-                  Queira viver o extraordinário.
-                </h2>
-                <div class="lead-form__field">
-                  <label for="lead-name-hero">Informe seu nome</label>
-                  <input
-                    class="lead-form__input lead-form__input--pill"
-                    id="lead-name-hero"
-                    name="name"
-                    type="text"
-                    autocomplete="name"
-                    placeholder=""
-                    required
-                  />
-                </div>
-                <div class="lead-form__field">
-                  <label for="lead-email-hero">Nos informe seu e-mail</label>
-                  <input
-                    class="lead-form__input lead-form__input--pill"
-                    id="lead-email-hero"
-                    name="email"
-                    type="email"
-                    autocomplete="email"
-                    placeholder=""
-                    required
-                  />
-                </div>
-                <div class="lead-form__field">
-                  <label for="lead-phone-hero"
-                    >Nos informe seu WhatsApp com DDD</label
+                  <p class="lead-form__kicker" id="lead-form-hero-kicker">
+                    Conheça mais sobre o Quadra Aura
+                  </p>
+                  <h2 class="lead-form__title" id="lead-form-hero-title">
+                    Queira viver o extraordinário.
+                  </h2>
+                  <div class="lead-form__field">
+                    <label for="lead-name-hero">Informe seu nome</label>
+                    <input
+                      class="lead-form__input lead-form__input--pill"
+                      id="lead-name-hero"
+                      name="name"
+                      type="text"
+                      autocomplete="name"
+                      placeholder=""
+                      required
+                    />
+                  </div>
+                  <div class="lead-form__field">
+                    <label for="lead-email-hero">Nos informe seu e-mail</label>
+                    <input
+                      class="lead-form__input lead-form__input--pill"
+                      id="lead-email-hero"
+                      name="email"
+                      type="email"
+                      autocomplete="email"
+                      placeholder=""
+                      required
+                    />
+                  </div>
+                  <div class="lead-form__field">
+                    <label for="lead-phone-hero"
+                      >Nos informe seu WhatsApp com DDD</label
+                    >
+                    <input
+                      class="lead-form__input lead-form__input--pill"
+                      id="lead-phone-hero"
+                      name="phone"
+                      type="tel"
+                      inputmode="numeric"
+                      autocomplete="tel"
+                      placeholder="(91) 90000-0000"
+                      maxlength="16"
+                      required
+                    />
+                  </div>
+                  <fieldset
+                    class="lead-form__fieldset lead-form__fieldset--contact-row"
+                    aria-labelledby="lead-contact-hero-legend"
                   >
-                  <input
-                    class="lead-form__input lead-form__input--pill"
-                    id="lead-phone-hero"
-                    name="phone"
-                    type="tel"
-                    inputmode="numeric"
-                    autocomplete="tel"
-                    placeholder="(91) 90000-0000"
-                    maxlength="16"
-                    required
-                  />
-                </div>
-                <fieldset
-                  class="lead-form__fieldset lead-form__fieldset--contact-row"
-                  aria-labelledby="lead-contact-hero-legend"
-                >
-                  <div class="lead-form__contact-row-inner">
-                    <span
-                      id="lead-contact-hero-legend"
-                      class="lead-form__legend"
-                      >Me contate pela:</span
-                    >
-                  <div class="lead-form__radios lead-form__radios--contact-row">
-                    <label class="lead-form__radio">
-                      <input
-                        type="radio"
-                        name="contact-hero"
-                        value="manha"
-                        checked
-                      />
-                      manhã
-                    </label>
-                    <label class="lead-form__radio">
-                      <input type="radio" name="contact-hero" value="tarde" />
-                      tarde
-                    </label>
-                    <label class="lead-form__radio">
-                      <input type="radio" name="contact-hero" value="noite" />
-                      noite
-                    </label>
-                    <label class="lead-form__radio">
-                      <input type="radio" name="contact-hero" value="email" />
-                      e-mail
-                    </label>
+                    <div class="lead-form__contact-row-inner">
+                      <span
+                        id="lead-contact-hero-legend"
+                        class="lead-form__legend"
+                        >Me contate pela:</span
+                      >
+                      <div
+                        class="lead-form__radios lead-form__radios--contact-row"
+                      >
+                        <label class="lead-form__radio">
+                          <input
+                            type="radio"
+                            name="contact-hero"
+                            value="manha"
+                            checked
+                          />
+                          manhã
+                        </label>
+                        <label class="lead-form__radio">
+                          <input
+                            type="radio"
+                            name="contact-hero"
+                            value="tarde"
+                          />
+                          tarde
+                        </label>
+                        <label class="lead-form__radio">
+                          <input
+                            type="radio"
+                            name="contact-hero"
+                            value="noite"
+                          />
+                          noite
+                        </label>
+                        <label class="lead-form__radio">
+                          <input
+                            type="radio"
+                            name="contact-hero"
+                            value="email"
+                          />
+                          e-mail
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <div class="lead-form__privacy">
+                    <input
+                      type="checkbox"
+                      id="lead-privacy-hero"
+                      name="privacy_accept"
+                      class="lead-form__checkbox"
+                      required
+                    />
+                    <div class="lead-form__privacy-text">
+                      <label for="lead-privacy-hero"
+                        >Aceito e concordo com a</label
+                      >
+                      <a href="#" class="lead-form__inline-link"
+                        >Política de privacidade</a
+                      ><span class="lead-form__privacy-dot" aria-hidden="true"
+                        >.</span
+                      >
+                    </div>
                   </div>
-                  </div>
-                </fieldset>
-                <div class="lead-form__privacy">
-                  <input
-                    type="checkbox"
-                    id="lead-privacy-hero"
-                    name="privacy_accept"
-                    class="lead-form__checkbox"
-                    required
-                  />
-                  <div class="lead-form__privacy-text">
-                    <label for="lead-privacy-hero">Aceito e concordo com a</label>
-                    <a href="#" class="lead-form__inline-link"
-                      >Política de privacidade</a
-                    ><span class="lead-form__privacy-dot" aria-hidden="true"
-                      >.</span
-                    >
-                  </div>
-                </div>
-                <button
-                  class="btn btn--olive btn--block btn--lead-submit"
-                  type="submit"
-                >
-                  Enviar formulário
-                </button>
+                  <button
+                    class="btn btn--olive btn--block btn--lead-submit"
+                    type="submit"
+                  >
+                    Enviar formulário
+                  </button>
                 </form>
               </div>
             </aside>
@@ -353,9 +373,11 @@
         <div class="container container--wide">
           <h2 id="intro-title" class="intro-verde__headline">
             <span class="intro-verde__headline-line"
-              >Entre o verde e a paisagem</span>
+              >Entre o verde e a paisagem</span
+            >
             <span class="intro-verde__headline-line"
-              >da baía, seu novo lar.</span>
+              >da baía, seu novo lar.</span
+            >
           </h2>
           <div class="grid-2">
             <div>
@@ -363,13 +385,26 @@
                 O seu bem viver. Sem sair de casa
               </h3>
               <p class="intro-verde__text">
-                Estudos mostram que fatores ambientais e o estilo de vida
-                influenciam diretamente a saúde e o bem-estar das pessoas. Por
-                isso, cada detalhe do Quadra Aura foi pensado para criar um
-                ambiente que favoreça equilíbrio, tranquilidade e qualidade de
-                vida.
+                <span class="intro-verde__text-line"
+                  >Estudos mostram que fatores ambientais e o estilo de</span
+                >
+                <span class="intro-verde__text-line"
+                  >vida influenciam diretamente a saúde e o bem-estar</span
+                >
+                <span class="intro-verde__text-line"
+                  >das pessoas. Por isso, cada detalhe do Quadra Aura</span
+                >
+                <span class="intro-verde__text-line"
+                  >foi pensado para criar um ambiente que favoreça</span
+                >
+                <span class="intro-verde__text-line"
+                  >equilíbrio, tranquilidade e qualidade de vida.</span
+                >
               </p>
-              <ul class="intro-verde__list intro-verde__list--features" id="diferenciais">
+              <ul
+                class="intro-verde__list intro-verde__list--features"
+                id="diferenciais"
+              >
                 <li>
                   <span class="intro-verde__list-icon" aria-hidden="true">
                     <img
@@ -382,7 +417,8 @@
                     />
                   </span>
                   <span class="intro-verde__list-text"
-                    >5000 m² de área no melhor bairro de Belém</span>
+                    >5000 m² de área no melhor bairro de Belém</span
+                  >
                 </li>
                 <li>
                   <span class="intro-verde__list-icon" aria-hidden="true">
@@ -396,7 +432,8 @@
                     />
                   </span>
                   <span class="intro-verde__list-text"
-                    >Vigilância e Segurança máxima 24/7</span>
+                    >Vigilância e Segurança máxima 24/7</span
+                  >
                 </li>
                 <li>
                   <span class="intro-verde__list-icon" aria-hidden="true">
@@ -410,7 +447,8 @@
                     />
                   </span>
                   <span class="intro-verde__list-text"
-                    >5 pavimentos com mais de 50 ambientes</span>
+                    >5 pavimentos com mais de 50 ambientes</span
+                  >
                 </li>
                 <li>
                   <span class="intro-verde__list-icon" aria-hidden="true">
@@ -424,7 +462,8 @@
                     />
                   </span>
                   <span class="intro-verde__list-text"
-                    >Manta Acústica em todo apartamento</span>
+                    >Manta Acústica em todo apartamento</span
+                  >
                 </li>
                 <li>
                   <span class="intro-verde__list-icon" aria-hidden="true">
@@ -437,7 +476,9 @@
                       decoding="async"
                     />
                   </span>
-                  <span class="intro-verde__list-text">Personalize sua planta</span>
+                  <span class="intro-verde__list-text"
+                    >Personalize sua planta</span
+                  >
                 </li>
                 <li>
                   <span class="intro-verde__list-icon" aria-hidden="true">
@@ -451,10 +492,13 @@
                     />
                   </span>
                   <span class="intro-verde__list-text"
-                    >Academia de alta tecnologia</span>
+                    >Academia de alta tecnologia</span
+                  >
                 </li>
               </ul>
-              <a class="btn btn--olive btn--arrow" href="#contato">Saiba mais</a>
+              <a class="btn btn--olive btn--arrow" href="#contato"
+                >Saiba mais</a
+              >
             </div>
             <div class="intro-verde__media">
               <img
@@ -486,10 +530,7 @@
         <h2 id="plantas-title" class="sr-only">Plantas</h2>
         <div class="container container--wide">
           <div class="plantas__grid">
-            <article
-              class="planta-card"
-              aria-label="Tipologia Brisa, 486 m²"
-            >
+            <article class="planta-card" aria-label="Tipologia Brisa, 486 m²">
               <div class="planta-card__media">
                 <img
                   src="./assets/images/png/brisa.png"
@@ -500,7 +541,9 @@
                   decoding="async"
                 />
               </div>
-              <a class="btn btn--olive btn--arrow" href="#contato">Saiba mais</a>
+              <a class="btn btn--olive btn--arrow" href="#contato"
+                >Saiba mais</a
+              >
             </article>
             <article
               class="planta-card"
@@ -516,7 +559,9 @@
                   decoding="async"
                 />
               </div>
-              <a class="btn btn--olive btn--arrow" href="#contato">Saiba mais</a>
+              <a class="btn btn--olive btn--arrow" href="#contato"
+                >Saiba mais</a
+              >
             </article>
           </div>
         </div>
@@ -580,9 +625,9 @@
                       <p class="team-card__bio">
                         No Quadra Aura, Léo Maia assina uma arquitetura autoral
                         que se revela por completo, das fachadas aos interiores.
-                        Conhecido por criar espaços contemporâneos que equilibram
-                        elegância e conforto, o arquiteto desenvolve um projeto
-                        marcado pela harmonia entre materiais, luz,
+                        Conhecido por criar espaços contemporâneos que
+                        equilibram elegância e conforto, o arquiteto desenvolve
+                        um projeto marcado pela harmonia entre materiais, luz,
                         funcionalidade e bem-estar. O resultado é uma
                         experiência estética e sensorial coerente, sofisticada e
                         feita para permanecer.
@@ -644,9 +689,9 @@
                       </h3>
                       <p class="team-card__role">Projeto de paisagismo.</p>
                       <p class="team-card__bio">
-                        Reconhecido como um dos principais paisagistas do Brasil,
-                        Benedito Abbud assina no Quadra Aura um projeto de
-                        paisagismo que integra jardins, lazer e convivência
+                        Reconhecido como um dos principais paisagistas do
+                        Brasil, Benedito Abbud assina no Quadra Aura um projeto
+                        de paisagismo que integra jardins, lazer e convivência
                         externos. Inspirado na convívio.
                       </p>
                     </div>
@@ -673,9 +718,9 @@
                       </h3>
                       <p class="team-card__role">Consultor de luxo | MCF</p>
                       <p class="team-card__bio">
-                        Reconhecido como um dos principais paisagistas do Brasil,
-                        Benedito Abbud assina no Quadra Aura um projeto de
-                        paisagismo que integra jardins, lazer e convivência
+                        Reconhecido como um dos principais paisagistas do
+                        Brasil, Benedito Abbud assina no Quadra Aura um projeto
+                        de paisagismo que integra jardins, lazer e convivência
                         externos. Inspirado na convívio.
                       </p>
                     </div>
@@ -684,7 +729,7 @@
               </div>
               <div class="carousel__slide" data-carousel-slide>
                 <div class="carousel__grid">
-                  <article class="team-card">
+                  <article class="team-card team-card--wellness-duo">
                     <div class="team-card__photo">
                       <img
                         src="./assets/images/png/gabriela_e_rafaella.png"
@@ -697,8 +742,12 @@
                     </div>
                     <div class="team-card__body">
                       <h3 class="team-card__name">
-                        <span class="team-card__name-line">Gabriela Hoffmann</span>
-                        <span class="team-card__name-line">e Rafaella Panzini</span>
+                        <span class="team-card__name-line"
+                          >Gabriela&nbsp;Hoffmann</span
+                        >
+                        <span class="team-card__name-line"
+                          >e&nbsp;Rafaella&nbsp;Panzini</span
+                        >
                       </h3>
                       <p class="team-card__role">Consultoria de Wellness</p>
                       <p class="team-card__bio">
@@ -760,23 +809,162 @@
         aria-labelledby="lead-split-title"
       >
         <h2 id="lead-split-title" class="sr-only">Imagem de destaque</h2>
-        <div class="lead-split__panel">
-          <div class="lead-split__panel-bg" aria-hidden="true">
-            <img
-              src="./assets/images/png/img_forms_secund.png"
-              alt=""
-              width="2514"
-              height="1259"
-              loading="lazy"
-            />
+        <div class="lead-split__stack">
+          <div class="lead-split__panel">
+            <div class="lead-split__panel-bg" aria-hidden="true">
+              <img
+                src="./assets/images/png/img_forms_secund.png"
+                alt=""
+                width="2514"
+                height="400"
+                loading="lazy"
+              />
+            </div>
+            <div class="lead-split__inner">
+              <div class="lead-split__layout">
+                <div class="lead-split__spacer" aria-hidden="true"></div>
+                <aside
+                  id="contato"
+                  class="hero__form-container"
+                  aria-label="Formulário de interesse"
+                >
+                <div class="hero__form-wrap lead-split__form-wrap">
+                  <form
+                    class="lead-form"
+                    method="post"
+                    aria-labelledby="lead-form-split-kicker lead-form-split-title"
+                    data-lead-placement="split"
+                  >
+                    <p class="lead-form__kicker" id="lead-form-split-kicker">
+                      Conheça mais sobre o Quadra Aura
+                    </p>
+                    <h2 class="lead-form__title" id="lead-form-split-title">
+                      Queira viver o extraordinário.
+                    </h2>
+                    <div class="lead-form__field">
+                      <label for="lead-name-split">Informe seu nome</label>
+                      <input
+                        class="lead-form__input lead-form__input--pill"
+                        id="lead-name-split"
+                        name="name"
+                        type="text"
+                        autocomplete="name"
+                        placeholder=""
+                        required
+                      />
+                    </div>
+                    <div class="lead-form__field">
+                      <label for="lead-email-split">Nos informe seu e-mail</label>
+                      <input
+                        class="lead-form__input lead-form__input--pill"
+                        id="lead-email-split"
+                        name="email"
+                        type="email"
+                        autocomplete="email"
+                        placeholder=""
+                        required
+                      />
+                    </div>
+                    <div class="lead-form__field">
+                      <label for="lead-phone-split"
+                        >Nos informe seu WhatsApp com DDD</label
+                      >
+                      <input
+                        class="lead-form__input lead-form__input--pill"
+                        id="lead-phone-split"
+                        name="phone"
+                        type="tel"
+                        inputmode="numeric"
+                        autocomplete="tel"
+                        placeholder="(91) 90000-0000"
+                        maxlength="16"
+                        required
+                      />
+                    </div>
+                    <fieldset
+                      class="lead-form__fieldset lead-form__fieldset--contact-row"
+                      aria-labelledby="lead-contact-split-legend"
+                    >
+                      <div class="lead-form__contact-row-inner">
+                        <span
+                          id="lead-contact-split-legend"
+                          class="lead-form__legend"
+                          >Me contate pela:</span
+                        >
+                        <div
+                          class="lead-form__radios lead-form__radios--contact-row"
+                        >
+                          <label class="lead-form__radio">
+                            <input
+                              type="radio"
+                              name="contact-split"
+                              value="manha"
+                              checked
+                            />
+                            manhã
+                          </label>
+                          <label class="lead-form__radio">
+                            <input
+                              type="radio"
+                              name="contact-split"
+                              value="tarde"
+                            />
+                            tarde
+                          </label>
+                          <label class="lead-form__radio">
+                            <input
+                              type="radio"
+                              name="contact-split"
+                              value="noite"
+                            />
+                            noite
+                          </label>
+                          <label class="lead-form__radio">
+                            <input
+                              type="radio"
+                              name="contact-split"
+                              value="email"
+                            />
+                            e-mail
+                          </label>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <div class="lead-form__privacy">
+                      <input
+                        type="checkbox"
+                        id="lead-privacy-split"
+                        name="privacy_accept"
+                        class="lead-form__checkbox"
+                        required
+                      />
+                      <div class="lead-form__privacy-text">
+                        <label for="lead-privacy-split"
+                          >Aceito e concordo com a</label
+                        >
+                        <a href="#" class="lead-form__inline-link"
+                          >Política de privacidade</a
+                        ><span class="lead-form__privacy-dot" aria-hidden="true"
+                          >.</span
+                        >
+                      </div>
+                    </div>
+                    <button
+                      class="btn btn--olive btn--block btn--lead-submit"
+                      type="submit"
+                    >
+                      Enviar formulário
+                    </button>
+                  </form>
+                </div>
+                </aside>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <footer
-        class="footer-cta"
-        aria-labelledby="footer-cta-heading"
-      >
+      <footer class="footer-cta" aria-labelledby="footer-cta-heading">
         <div class="footer-cta__frame">
           <div class="footer-cta__layout">
             <div class="footer-cta__media">
@@ -817,8 +1005,8 @@
                 onde você merece chegar.
               </p>
               <p class="footer-cta__legal">
-                Imagens meramente ilustrativas. Móveis, objetos e acabamentos são
-                sugestões de decoração e não fazem parte do contrato.
+                Imagens meramente ilustrativas. Móveis, objetos e acabamentos
+                são sugestões de decoração e não fazem parte do contrato.
                 Informações oficiais constam no memorial descritivo e demais
                 documentos do empreendimento. Projeto sujeito a alterações.
               </p>
@@ -886,7 +1074,15 @@
               class="video-modal__iframe"
               data-video-modal-iframe
               title="Quadra Aura — vídeo no YouTube"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+                web-share;
+              "
               referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen
             ></iframe>

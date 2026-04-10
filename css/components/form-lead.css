@@ -6,7 +6,7 @@
   --lead-gap-header: 0.875rem;
 
   padding: var(--space-lg);
-  background-color: rgba(35, 26, 11, 0.92);
+  background-color: rgba(35, 26, 11, 0.6);
   backdrop-filter: blur(12px);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-soft);
@@ -37,10 +37,7 @@
   white-space: nowrap;
   /* Fallback sem container queries; depois escala com a largura do card (cqi) */
   font-size: clamp(0.8125rem, 3.5vw + 0.45rem, 2.800625rem);
-  font-size: min(
-    2.800625rem,
-    max(0.8125rem, calc((100cqi - 1.5rem) / 20))
-  );
+  font-size: min(2.800625rem, max(0.8125rem, calc((100cqi - 1.5rem) / 20)));
 }
 
 .lead-form__field {
@@ -295,13 +292,14 @@
   cursor: not-allowed;
 }
 
-/* Formulário do hero — largura ~680px, raio 32; ritmo vertical herdado de .lead-form */
-.hero__form-container .lead-form {
+/* Formulário do hero e o segundo (#contato na secção lead-split) */
+.hero__form-container .lead-form,
+.lead-split__form-wrap .lead-form {
   display: flex;
   flex-direction: column;
   align-items: stretch;
   gap: 0;
-  max-width: 680px;
+  max-width: 38.5rem;
   width: 100%;
   border-radius: 32px;
   box-sizing: border-box;
@@ -317,49 +315,79 @@
   }
 }
 
-.hero__form-container .lead-form .lead-form__kicker {
+.hero__form-container .lead-form .lead-form__kicker,
+.lead-split__form-wrap .lead-form .lead-form__kicker {
   margin: 0 0 var(--lead-gap-header);
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
 }
 
-.hero__form-container .lead-form .lead-form__title {
+.hero__form-container .lead-form .lead-form__title,
+.lead-split__form-wrap .lead-form .lead-form__title {
   margin: 0 0 var(--lead-gap-block);
   white-space: normal;
   overflow-wrap: break-word;
   line-height: 1.12;
+  font-size: clamp(0.75rem, 3.2vw + 0.4rem, 2.62rem);
 }
 
 @supports (width: 1cqi) {
-  .hero__form-container .lead-form .lead-form__title {
-    font-size: min(
-      2.800625rem,
-      max(0.875rem, calc((100cqi - 2rem) / 15))
-    );
+  .hero__form-container .lead-form .lead-form__title,
+  .lead-split__form-wrap .lead-form .lead-form__title {
+    font-size: min(2.62rem, max(0.8125rem, calc((100cqi - 2rem) / 16)));
   }
 }
 
-/* Com largura confortável do card, força uma linha (container = .hero__form-wrap) */
+.hero__form-container .lead-form .lead-form__field label,
+.hero__form-container .lead-form .lead-form__legend,
+.hero__form-container .lead-form .lead-form__privacy-text,
+.lead-split__form-wrap .lead-form .lead-form__field label,
+.lead-split__form-wrap .lead-form .lead-form__legend,
+.lead-split__form-wrap .lead-form .lead-form__privacy-text {
+  font-size: 0.95rem;
+  letter-spacing: 0.28px;
+}
+
+.hero__form-container .lead-form .lead-form__fieldset--contact-row .lead-form__radio,
+.lead-split__form-wrap .lead-form .lead-form__fieldset--contact-row .lead-form__radio {
+  font-size: 0.8125rem;
+  letter-spacing: 0.18px;
+}
+
+.hero__form-container .lead-form .btn--lead-submit,
+.lead-split__form-wrap .lead-form .btn--lead-submit {
+  font-size: clamp(0.9rem, 2.2vw, 0.9875rem);
+}
+
+/* Com largura confortável do card, força uma linha (container = .hero__form-wrap / .lead-split__form-wrap) */
 @container lead (min-width: 600px) {
-  .hero__form-container .lead-form .lead-form__title {
+  .hero__form-container .lead-form .lead-form__title,
+  .lead-split__form-wrap .lead-form .lead-form__title {
     white-space: nowrap;
   }
 }
 
-.hero__form-container .lead-form .lead-form__fieldset {
+.hero__form-container .lead-form .lead-form__fieldset,
+.lead-split__form-wrap .lead-form .lead-form__fieldset {
   margin: 0 0 var(--lead-gap-block);
 }
 
-.hero__form-container .lead-form .lead-form__fieldset--contact-row {
+.hero__form-container .lead-form .lead-form__fieldset--contact-row,
+.lead-split__form-wrap .lead-form .lead-form__fieldset--contact-row {
   column-gap: 0.55rem;
 }
 
-.hero__form-container .lead-form .lead-form__radios--contact-row {
+.hero__form-container .lead-form .lead-form__radios--contact-row,
+.lead-split__form-wrap .lead-form .lead-form__radios--contact-row {
   gap: 0.3rem 0.45rem;
 }
 
-.hero__form-container .lead-form .lead-form__privacy {
+.hero__form-container .lead-form .lead-form__privacy,
+.lead-split__form-wrap .lead-form .lead-form__privacy {
   margin: 0 0 var(--lead-gap-block);
 }
 
-.hero__form-container .lead-form .btn {
+.hero__form-container .lead-form .btn,
+.lead-split__form-wrap .lead-form .btn {
   margin-top: 0;
 }

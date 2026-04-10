@@ -8,7 +8,11 @@
   font-family: var(--font-bethany);
   font-weight: 400;
   font-style: normal;
-  font-size: clamp(2rem, 2.25vw + 1.5rem, 3.738125rem); /* máx. 59.81px */
+  font-size: clamp(
+    calc(2rem - 8px),
+    calc(2.25vw + 1.5rem - 8px),
+    calc(3.738125rem - 8px)
+  );
   line-height: 1.199; /* 71.77 / 59.81 — escala com o tamanho fluido */
   letter-spacing: 0.02006em; /* ~1.2px em 59.81px */
   text-align: center;

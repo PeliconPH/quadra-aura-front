@@ -1,6 +1,11 @@
 .callout-bar {
   background-color: var(--color-cream);
-  padding: var(--space-md) clamp(1rem, 4vw, 2.5rem);
+  padding: var(--space-md)
+    clamp(
+      calc(1rem + var(--page-pad-plus)),
+      calc(4vw + var(--page-pad-plus)),
+      calc(2.5rem + var(--page-pad-plus))
+    );
   box-sizing: border-box;
 }
 
@@ -26,8 +31,12 @@
   font-family: var(--font-inter);
   font-weight: 400;
   font-style: normal;
-  /* Escala no mobile para caber numa linha */
-  font-size: clamp(0.8125rem, 2.2vw + 0.35rem, 1.9625rem); /* até 31.4px */
+  /* Escala no mobile para caber numa linha (−4px vs. referência) */
+  font-size: clamp(
+    calc(0.8125rem - 4px),
+    calc(2.2vw + 0.35rem - 4px),
+    calc(1.9625rem - 4px)
+  );
   line-height: 1; /* 31.4px / 31.4px */
   letter-spacing: 0.63px;
   opacity: 1;
@@ -51,8 +60,12 @@
   }
 
   .callout-bar__text {
-    /* Frase longa + nowrap: reduzir para caber numa linha na pílula */
-    font-size: clamp(0.5rem, 2vw + 0.22rem, 0.6875rem);
+    /* Frase longa + nowrap: reduzir para caber numa linha na pílula (−4px) */
+    font-size: clamp(
+      calc(0.5rem - 4px),
+      calc(2vw + 0.22rem - 4px),
+      calc(0.6875rem - 4px)
+    );
     letter-spacing: 0.035em;
   }
 }

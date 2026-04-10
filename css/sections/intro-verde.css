@@ -15,7 +15,11 @@
   font-family: var(--font-bethany);
   font-weight: 400;
   font-style: normal;
-  font-size: clamp(2rem, 2.25vw + 1.5rem, 3.738125rem); /* máx. 59.81px */
+  font-size: clamp(
+    calc(2rem - 4px),
+    calc(2.25vw + 1.5rem - 4px),
+    calc(3.738125rem - 4px)
+  ); /* ~4px menor que o Figma em todo o intervalo */
   line-height: 1.199; /* 71.77 / 59.81 — escala com o tamanho fluido */
   letter-spacing: 0.02006em; /* ~1.2px em 59.81px */
   text-align: center;
@@ -41,7 +45,11 @@
   font-family: var(--font-bethany);
   font-weight: 400;
   font-style: normal;
-  font-size: clamp(1.375rem, 1.35vw + 1rem, 2.125rem);
+  font-size: clamp(
+    calc(1.375rem - 4px),
+    calc(1.35vw + 1rem - 4px),
+    calc(2.125rem - 4px)
+  );
   line-height: 1.25;
   letter-spacing: 0.02em;
   color: var(--color-olive);
@@ -52,6 +60,11 @@
   color: var(--color-text-muted);
   margin-bottom: var(--space-md);
   line-height: 1.7;
+}
+
+.intro-verde__text-line {
+  display: block;
+  max-width: 100%;
 }
 
 .intro-verde__list {
@@ -107,9 +120,17 @@
   box-shadow: 0 20px 48px rgba(59, 61, 43, 0.12);
 }
 
+/* Desktop (grid 2 colunas): +50px largura; altura mínima +25px em todos os breakpoints */
+@media (min-width: 1024px) {
+  .intro-verde__media {
+    width: calc(100% + 50px);
+    margin-inline-end: -50px;
+  }
+}
+
 .intro-verde__media img {
   width: 100%;
   height: 100%;
-  min-height: 280px;
+  min-height: calc(280px + 25px);
   object-fit: cover;
 }

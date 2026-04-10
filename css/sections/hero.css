@@ -57,8 +57,9 @@
   min-height: min(92vh, 900px);
   margin-inline: auto;
   box-sizing: border-box;
-  /* Mobile: empilhado; margens laterais mínimas */
-  padding: clamp(5.25rem, 14vw, 6rem) clamp(0.75rem, 3vw, 1.25rem)
+  /* Mobile: empilhado; margens laterais mínimas (+ --page-pad-plus na LP) */
+  padding: clamp(5.25rem, 14vw, 6rem)
+    clamp(calc(0.75rem + var(--page-pad-plus)), calc(3vw + var(--page-pad-plus)), calc(1.25rem + var(--page-pad-plus)))
     clamp(2rem, 6vw, 3.5rem);
 }
 
@@ -114,32 +115,49 @@
   position: relative;
 }
 
-/* Texto sempre legível por cima se algo encostar no eixo Z */
 .hero__text-container {
-  z-index: 1;
-}
-
-.hero__form-container {
-  z-index: 0;
+  container-type: inline-size;
+  container-name: hero-text;
   width: 100%;
 }
 
-/* Âncora #contato (CTA / Saiba mais): formulário no hero; folga extra acima do card */
-#contato.hero__form-container {
-  scroll-margin-top: calc(clamp(6.5rem, 7.95vw, 8.4rem) + 24px);
+.hero__form-container {
+  width: 100%;
+}
+
+/* Duas colunas do grid não podem invadir uma à outra: texto fica na própria célula */
+@media (min-width: 900px) {
+  .hero__text-container {
+    overflow-x: clip;
+  }
 }
 
 @media (min-width: 900px) {
   .hero__layout {
-    grid-template-columns: minmax(0, 1fr) minmax(0, min(42.5rem, 44vw));
+    grid-template-columns: minmax(0, 1fr) minmax(0, min(38.5rem, 44vw));
     column-gap: clamp(0.65rem, 2vw, 2.25rem);
-    align-items: start;
+    /* Mesma altura nas duas colunas: texto + botão agrupados no rodapé da esquerda */
+    align-items: stretch;
+  }
+
+  .hero__text-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .hero__content {
+    flex: 1;
+    min-height: 0;
+    min-width: 0;
+    max-width: 100%;
+    justify-content: flex-end;
   }
 }
 
 @media (min-width: 1200px) {
   .hero__layout {
-    grid-template-columns: minmax(0, 1fr) minmax(0, min(42.5rem, 46vw));
+    grid-template-columns: minmax(0, 1fr) minmax(0, min(38.5rem, 46vw));
     column-gap: clamp(1rem, 2.5vw, 3rem);
   }
 }
@@ -163,20 +181,27 @@
 }
 
 .hero__headline {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  display: block;
   font-family: var(--font-bethany);
   font-weight: 400;
   font-style: normal;
   letter-spacing: -0.06em;
   margin: 0;
   max-width: 100%;
+  min-width: 0;
   text-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
   font-size: clamp(1.6rem, 4.5vw + 0.35rem, 4.74625rem);
   line-height: 1.08;
   overflow-wrap: break-word;
   word-wrap: break-word;
+}
+
+@media (min-width: 900px) {
+  .hero__headline {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 /* Faixa “dois lados”: reduz um pouco o título para caber sem invadir o card */
@@ -187,12 +212,18 @@
   }
 }
 
-/* Permite quebra entre / dentro das linhas para o texto não invadir o card do formulário */
+/* Mobile: fluxo contínuo; desktop: uma linha por span (quebra como no layout) */
 .hero__headline-line {
-  display: block;
+  display: inline;
   max-width: 100%;
   white-space: normal;
   overflow-wrap: break-word;
+}
+
+@media (min-width: 900px) {
+  .hero__headline-line {
+    display: block;
+  }
 }
 
 .hero__sub {
@@ -205,6 +236,34 @@
   max-width: min(100%, 44.375rem);
   font-size: clamp(0.95rem, 1.85vw + 0.55rem, 2.35rem);
   line-height: 1.35;
+}
+
+/* Mobile: parágrafo contínuo; desktop: três linhas fixas como no layout */
+.hero__sub-line {
+  display: inline;
+  overflow-wrap: break-word;
+}
+
+/* Sem quebra entre 300 / a / 257 — só desce o bloco inteiro se faltar largura */
+.hero__sub-metric {
+  white-space: nowrap;
+}
+
+@media (min-width: 900px) {
+  .hero__sub {
+    max-width: 100%;
+  }
+
+  .hero__sub .hero__sub-line {
+    display: block;
+  }
+}
+
+/* Só força 1 linha na frase dos apartamentos quando *esta coluna* é larga o suficiente (não pela viewport) */
+@container hero-text (min-width: 36rem) {
+  .hero__sub .hero__sub-line:first-child {
+    white-space: nowrap;
+  }
 }
 
 @media (min-width: 900px) and (max-width: 1199px) {
@@ -220,6 +279,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
+  margin-bottom: 24px;
   font-family: var(--font-bethany);
   font-weight: 400;
   font-style: normal;
@@ -233,17 +293,17 @@
   border: 1px solid rgba(255, 255, 255, 0.45);
   width: min(100%, 30.1875rem);
   height: auto;
-  min-height: 3.25rem;
-  padding: 1rem 1.5rem;
+  min-height: calc(3.25rem - 16px);
+  padding: 0.5rem 1.5rem;
   white-space: normal;
   text-align: center;
 }
 
 @media (min-width: 1280px) {
   .hero__video-btn {
-    height: 4.4375rem;
-    min-height: 4.4375rem;
-    padding: 21px 170px 21px 164px;
+    height: calc(4.4375rem - 16px);
+    min-height: calc(4.4375rem - 16px);
+    padding: 13px 170px 13px 164px;
     white-space: nowrap;
     line-height: 1;
   }
@@ -258,7 +318,7 @@
   container-type: inline-size;
   container-name: lead;
   width: 100%;
-  max-width: min(100%, 42.5rem);
+  max-width: min(100%, 38.5rem);
   margin-inline: auto;
   min-width: 0;
 }
@@ -267,6 +327,6 @@
   .hero__form-wrap {
     margin-inline: 0;
     margin-left: auto;
-    max-width: 42.5rem;
+    max-width: 38.5rem;
   }
 }
