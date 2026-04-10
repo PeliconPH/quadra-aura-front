@@ -2,13 +2,17 @@
   "name": "quadra-aura-front",
   "private": true,
   "type": "module",
+  "packageManager": "yarn@1.22.22",
   "scripts": {
+    "deps:unlock": "node scripts/deps-unlock.mjs",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "tunnel": "cloudflared tunnel --url http://127.0.0.1:5175"
+    "tunnel": "cloudflared tunnel --url http://127.0.0.1:5175",
+    "optimize:pngs": "node scripts/optimize-pngs.mjs"
   },
   "devDependencies": {
+    "sharp": "^0.34.2",
     "vite": "^6.3.5"
   },
   "overrides": {
