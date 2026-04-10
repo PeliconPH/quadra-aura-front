@@ -50,7 +50,6 @@
 
   var viewport = root.querySelector(".carousel__viewport");
 
-  /** Altura fixa = maior entre todas as “páginas”, para os botões não subirem/desçerem ao trocar slide */
   function syncViewportHeight() {
     if (!viewport) return;
     var spv = slidesPerView();
@@ -79,7 +78,6 @@
     var spv = slidesPerView();
     var pct = (index * spv * 100) / total;
     track.style.transform = "translateX(-" + pct + "%)";
-    // Loop infinito: nunca desabilita as setas
     if (prev) prev.disabled = false;
     if (next) next.disabled = false;
     if (dotsContainer) {

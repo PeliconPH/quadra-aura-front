@@ -8,27 +8,21 @@
       content="Quadra Aura — o 1º Wellness Building de Belém. Apartamentos de alto padrão no Umarizal, com arquitetura autoral e foco em bem-estar."
     />
     <title>Quadra Aura — Um lugar à altura da vida que você construiu</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Apenas pesos usados no CSS; latin-ext cobre português. media=print+onload evita bloquear a pintura inicial. -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap&subset=latin,latin-ext"
-      rel="stylesheet"
-      media="print"
-      onload="this.media='all'"
-    />
-    <noscript>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap&subset=latin,latin-ext"
-        rel="stylesheet"
-      />
-    </noscript>
     <link
       rel="preload"
       as="image"
-      href="./assets/images/png/img-intro.png"
+      href="./assets/images/webp/img-intro-sm.webp"
       fetchpriority="high"
+      media="(max-width: 768px)"
     />
+    <link
+      rel="preload"
+      as="image"
+      href="./assets/images/webp/img-intro-lg.webp"
+      fetchpriority="high"
+      media="(min-width: 769px)"
+    />
+    <link rel="stylesheet" href="css/fonts-face.css" />
     <link rel="stylesheet" href="css/tokens.css" />
     <link rel="stylesheet" href="css/fonts-bethany.css" />
     <link rel="stylesheet" href="css/fonts-civane.css" />
@@ -192,15 +186,26 @@
     <main id="topo">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero__bg">
-          <img
-            class="hero__bg-img"
-            src="./assets/images/png/img-intro.png"
-            alt=""
-            width="1920"
-            height="1080"
-            fetchpriority="high"
-            decoding="async"
-          />
+          <picture>
+            <source
+              type="image/webp"
+              media="(max-width: 768px)"
+              srcset="./assets/images/webp/img-intro-sm.webp"
+            />
+            <source
+              type="image/webp"
+              srcset="./assets/images/webp/img-intro-lg.webp"
+            />
+            <img
+              class="hero__bg-img"
+              src="./assets/images/png/img-intro.png"
+              alt=""
+              width="1920"
+              height="1080"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </picture>
         </div>
         <div class="hero__overlay" aria-hidden="true"></div>
         <div class="hero__inner">
@@ -831,13 +836,20 @@
         <div class="lead-split__stack">
           <div class="lead-split__panel">
             <div class="lead-split__panel-bg" aria-hidden="true">
-              <img
-                src="./assets/images/png/img_forms_secund.png"
-                alt=""
-                width="2514"
-                height="400"
-                loading="lazy"
-              />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="./assets/images/webp/img-forms.webp"
+                />
+                <img
+                  src="./assets/images/png/img_forms_secund.png"
+                  alt=""
+                  width="2514"
+                  height="400"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </div>
             <div class="lead-split__inner">
               <div class="lead-split__layout">

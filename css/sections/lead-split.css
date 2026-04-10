@@ -36,6 +36,12 @@
   border-radius: inherit;
 }
 
+.lead-split__panel-bg picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .lead-split__panel-bg img {
   width: 100%;
   height: 100%;
