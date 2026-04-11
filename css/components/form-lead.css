@@ -309,9 +309,8 @@
 
 @media (min-width: 900px) {
   .hero__form-container .lead-form {
-    /* um pouco menos à direita — mais largura útil para a linha “Me contate pela:” */
     padding: 56px 28px 56px 40px;
-    min-height: min(728px, 85vh);
+    min-height: min(100px, 80vh);
   }
 }
 
@@ -348,8 +347,14 @@
   letter-spacing: 0.28px;
 }
 
-.hero__form-container .lead-form .lead-form__fieldset--contact-row .lead-form__radio,
-.lead-split__form-wrap .lead-form .lead-form__fieldset--contact-row .lead-form__radio {
+.hero__form-container
+  .lead-form
+  .lead-form__fieldset--contact-row
+  .lead-form__radio,
+.lead-split__form-wrap
+  .lead-form
+  .lead-form__fieldset--contact-row
+  .lead-form__radio {
   font-size: 0.8125rem;
   letter-spacing: 0.18px;
 }

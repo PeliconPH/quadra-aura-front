@@ -41,30 +41,48 @@
   }
 }
 
+/* Uma linha fixa; intro-verde-text-fit.js reduz até caber na coluna */
 .intro-verde__subtitle {
+  /* Equivalente visual a calc(2.125rem - 4px) — valor simples para o ajuste em JS */
+  --intro-subtitle-max: 1.875rem;
+  --intro-subtitle-min: 0.6875rem;
   font-family: var(--font-bethany);
   font-weight: 400;
   font-style: normal;
   font-size: clamp(
-    calc(1.375rem - 4px),
+    var(--intro-subtitle-min),
     calc(1.35vw + 1rem - 4px),
-    calc(2.125rem - 4px)
+    var(--intro-subtitle-max)
   );
   line-height: 1.25;
   letter-spacing: 0.02em;
   color: var(--color-olive);
   margin: 0 0 var(--space-sm);
+  max-width: 100%;
+  min-width: 0;
 }
 
+.intro-verde__subtitle-line {
+  display: block;
+  white-space: nowrap;
+}
+
+/* Cinco linhas fixas; mesmo ajuste de fonte por JS */
 .intro-verde__text {
+  --intro-text-max: calc(1rem - 2px);
+  --intro-text-min: 0.625rem;
   color: var(--color-text-muted);
   margin-bottom: var(--space-md);
   line-height: 1.7;
+  font-size: clamp(var(--intro-text-min), 0.2vw + 0.92rem, var(--intro-text-max));
+  max-width: 100%;
+  min-width: 0;
 }
 
 .intro-verde__text-line {
   display: block;
   max-width: 100%;
+  white-space: nowrap;
 }
 
 .intro-verde__list {
@@ -76,17 +94,17 @@
   align-items: flex-start;
   gap: 0.85rem;
   margin-bottom: 0.85rem;
-  font-size: 0.9375rem;
+  font-size: calc(0.9375rem - 2px);
   color: var(--color-text);
 }
 
 /* Ícones: dentro de .intro-verde__list-icon use <img src="..." alt="" /> (só decoração → alt vazio). */
 .intro-verde__list-icon {
   flex-shrink: 0;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   margin-top: 0.08rem;
-  border-radius: 6px;
+  border-radius: 5px;
   border: 1px solid rgba(35, 26, 11, 0.12);
   background-color: rgba(35, 26, 11, 0.04);
   box-sizing: border-box;
@@ -100,8 +118,8 @@
 
 .intro-verde__list-icon img {
   display: block;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   object-fit: contain;
   object-position: center;
   box-sizing: border-box;
@@ -120,11 +138,22 @@
   box-shadow: 0 20px 48px rgba(59, 61, 43, 0.12);
 }
 
-/* Desktop (grid 2 colunas): +50px largura; altura mínima +25px em todos os breakpoints */
+/* Coluna de texto: permite encolher no grid sem estourar nowrap */
+.intro-verde__copy {
+  min-width: 0;
+}
+
+/* Desktop: texto ⅓, imagem ⅔ (minmax evita estouro no grid) */
 @media (min-width: 1024px) {
+  .intro-verde .grid-2 {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    gap: var(--space-xl);
+    align-items: center;
+  }
+
   .intro-verde__media {
-    width: calc(100% + 50px);
-    margin-inline-end: -50px;
+    width: 100%;
+    margin-inline-end: 0;
   }
 }
 

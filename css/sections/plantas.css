@@ -22,15 +22,54 @@
   text-align: center;
 }
 
+/* Bloco único: texto no "ar" cream acima, planta abaixo */
 .planta-card__media {
-  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background-color: var(--color-cream);
   border-radius: var(--radius-lg);
   overflow: hidden;
   margin-bottom: var(--space-md);
   box-shadow: none;
 }
 
-.planta-card__media img {
+.planta-card__caption {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(0.65rem, 2vw, 1.1rem) clamp(0.75rem, 2vw, 1.25rem)
+    clamp(0.5rem, 1.5vw, 0.85rem);
+  text-align: center;
+  background-color: var(--color-cream);
+}
+
+/* Bloco texto: centralizado no card */
+.planta-card__caption-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Título + métrica: bloco inline centralizado, escadinha interna */
+.planta-card__caption-lead {
+  --planta-title-fs: clamp(1.5rem, 3.8vw, 2.625rem);
+  font-size: var(--planta-title-fs);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3em;
+}
+
+.planta-card__img-wrap {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: block;
+}
+
+.planta-card__img {
   display: block;
   width: 100%;
   height: auto;
@@ -39,4 +78,57 @@
   object-position: center;
   box-shadow: none;
   filter: none;
+}
+
+.planta-card__caption p {
+  margin: 0;
+}
+
+/* Título: Playfair Display — cor #353622 */
+.planta-card__caption-title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1em;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: #353622;
+}
+
+/*
+  2ª linha: escadinha via padding-left.
+  padding-left não é afetado por ".planta-card__caption p { margin: 0 }" de maior especificidade.
+*/
+.planta-card__caption-size {
+  align-self: flex-start;
+  padding-left: 2.48em;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-style: normal;
+  font-size: 0.64em;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: #353622;
+}
+
+.planta-card__sup {
+  font-size: 0.58em;
+  font-weight: 700;
+  line-height: 0;
+  vertical-align: 0.42em;
+  position: relative;
+  top: -0.02em;
+  margin-left: -0.08em;
+}
+
+.planta-card__caption-meta {
+  margin-top: clamp(0.18rem, 0.5vw, 0.3rem) !important;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: clamp(0.6875rem, 1.25vw, 0.8125rem);
+  line-height: 1.35;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  text-align: center;
+  color: #353622;
 }

@@ -48,7 +48,7 @@
 
 @media (min-width: 900px) {
   .footer-cta__layout {
-    grid-template-columns: minmax(0, 0.44fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: clamp(1.75rem, 3.5vw, 3rem);
   }
 }

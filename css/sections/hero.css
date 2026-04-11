@@ -186,8 +186,13 @@
   }
 }
 
+/* Título: exatamente 2 linhas (uma por .hero__headline-line); tamanho máximo = Figma / layout anterior */
 .hero__headline {
-  display: block;
+  --hero-head-max: 4.74625rem;
+  --hero-head-min: 0.8125rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   font-family: var(--font-bethany);
   font-weight: 400;
   font-style: normal;
@@ -196,43 +201,38 @@
   max-width: 100%;
   min-width: 0;
   text-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
-  font-size: clamp(1.6rem, 4.5vw + 0.35rem, 4.74625rem);
+  /* Fallback antes do JS; hero-text-fit.js ajusta em px até caber nas 2 linhas */
+  font-size: clamp(var(--hero-head-min), 4vw + 0.65rem, var(--hero-head-max));
   line-height: 1.08;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
 }
 
-@media (min-width: 900px) {
+@supports (width: 1cqi) {
   .hero__headline {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    font-size: clamp(
+      var(--hero-head-min),
+      min(5.5cqi + 0.65rem, 4vw + 0.65rem),
+      var(--hero-head-max)
+    );
   }
 }
 
-/* Faixa “dois lados”: reduz um pouco o título para caber sem invadir o card */
 @media (min-width: 900px) and (max-width: 1199px) {
   .hero__headline {
-    font-size: clamp(1.75rem, 1.85vw + 1.15rem, 3.15rem);
-    line-height: 1.1;
+    --hero-head-max: 3.15rem;
   }
 }
 
-/* Mobile: fluxo contínuo; desktop: uma linha por span (quebra como no layout) */
 .hero__headline-line {
-  display: inline;
+  display: block;
   max-width: 100%;
-  white-space: normal;
-  overflow-wrap: break-word;
+  white-space: nowrap;
+  overflow: visible;
 }
 
-@media (min-width: 900px) {
-  .hero__headline-line {
-    display: block;
-  }
-}
-
+/* Subtítulo: no máximo 3 linhas (fluxo contínuo); máximo = layout anterior */
 .hero__sub {
+  --hero-sub-max: 2.35rem;
+  --hero-sub-min: 0.6875rem;
   font-family: var(--font-bethany);
   font-weight: 400;
   font-style: normal;
@@ -240,17 +240,15 @@
   opacity: 0.5;
   margin: 0;
   max-width: min(100%, 44.375rem);
-  font-size: clamp(0.95rem, 1.85vw + 0.55rem, 2.35rem);
+  font-size: clamp(var(--hero-sub-min), 1.85vw + 0.55rem, var(--hero-sub-max));
   line-height: 1.35;
 }
 
-/* Mobile: parágrafo contínuo; desktop: três linhas fixas como no layout */
 .hero__sub-line {
   display: inline;
   overflow-wrap: break-word;
 }
 
-/* Sem quebra entre 300 / a / 257 — só desce o bloco inteiro se faltar largura */
 .hero__sub-metric {
   white-space: nowrap;
 }
@@ -259,22 +257,11 @@
   .hero__sub {
     max-width: 100%;
   }
-
-  .hero__sub .hero__sub-line {
-    display: block;
-  }
-}
-
-/* Só força 1 linha na frase dos apartamentos quando *esta coluna* é larga o suficiente (não pela viewport) */
-@container hero-text (min-width: 36rem) {
-  .hero__sub .hero__sub-line:first-child {
-    white-space: nowrap;
-  }
 }
 
 @media (min-width: 900px) and (max-width: 1199px) {
   .hero__sub {
-    font-size: clamp(1rem, 1.1vw + 0.7rem, 1.65rem);
+    --hero-sub-max: 1.65rem;
     line-height: 1.4;
   }
 }

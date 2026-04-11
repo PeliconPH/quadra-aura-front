@@ -404,9 +404,11 @@
             >
           </h2>
           <div class="grid-2">
-            <div>
+            <div class="intro-verde__copy">
               <h3 class="intro-verde__subtitle" id="intro-subtitle">
-                O seu bem viver. Sem sair de casa
+                <span class="intro-verde__subtitle-line"
+                  >O seu bem viver. Sem sair de casa</span
+                >
               </h3>
               <p class="intro-verde__text">
                 <span class="intro-verde__text-line"
@@ -434,8 +436,8 @@
                     <img
                       src="assets/images/svg/500m.svg"
                       alt=""
-                      width="20"
-                      height="20"
+                      width="18"
+                      height="18"
                       loading="lazy"
                       decoding="async"
                     />
@@ -449,8 +451,8 @@
                     <img
                       src="assets/images/svg/vigilancia.svg"
                       alt=""
-                      width="20"
-                      height="20"
+                      width="18"
+                      height="18"
                       loading="lazy"
                       decoding="async"
                     />
@@ -464,8 +466,8 @@
                     <img
                       src="assets/images/svg/pavimento.svg"
                       alt=""
-                      width="20"
-                      height="20"
+                      width="18"
+                      height="18"
                       loading="lazy"
                       decoding="async"
                     />
@@ -479,8 +481,8 @@
                     <img
                       src="assets/images/svg/manta.svg"
                       alt=""
-                      width="20"
-                      height="20"
+                      width="18"
+                      height="18"
                       loading="lazy"
                       decoding="async"
                     />
@@ -494,8 +496,8 @@
                     <img
                       src="assets/images/svg/personalize.svg"
                       alt=""
-                      width="20"
-                      height="20"
+                      width="18"
+                      height="18"
                       loading="lazy"
                       decoding="async"
                     />
@@ -509,8 +511,8 @@
                     <img
                       src="assets/images/svg/academia.svg"
                       alt=""
-                      width="20"
-                      height="20"
+                      width="18"
+                      height="18"
                       loading="lazy"
                       decoding="async"
                     />
@@ -556,14 +558,30 @@
           <div class="plantas__grid">
             <article class="planta-card" aria-label="Tipologia Brisa, 486 m²">
               <div class="planta-card__media">
-                <img
-                  src="./assets/images/png/brisa.png"
-                  alt="Planta ilustrativa da tipologia Brisa"
-                  width="1200"
-                  height="800"
-                  loading="lazy"
-                  decoding="async"
-                />
+                <div class="planta-card__caption">
+                  <div class="planta-card__caption-inner">
+                    <div class="planta-card__caption-lead">
+                      <p class="planta-card__caption-title">Brisa</p>
+                      <p class="planta-card__caption-size">
+                        486m<sup class="planta-card__sup">2</sup>
+                      </p>
+                    </div>
+                    <p class="planta-card__caption-meta">
+                      01 apartamento por andar | 4 a 5 vagas
+                    </p>
+                  </div>
+                </div>
+                <div class="planta-card__img-wrap">
+                  <img
+                    class="planta-card__img"
+                    src="./assets/images/png/brisa1.png"
+                    alt="Planta ilustrativa da tipologia Brisa, 486 m²"
+                    width="1200"
+                    height="800"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
               </div>
               <a class="btn btn--olive btn--arrow" href="#contato"
                 >Saiba mais</a
@@ -574,14 +592,30 @@
               aria-label="Tipologia Serena, 300 a 257 m²"
             >
               <div class="planta-card__media">
-                <img
-                  src="./assets/images/png/serena.png"
-                  alt="Planta ilustrativa da tipologia Serena"
-                  width="1200"
-                  height="800"
-                  loading="lazy"
-                  decoding="async"
-                />
+                <div class="planta-card__caption">
+                  <div class="planta-card__caption-inner">
+                    <div class="planta-card__caption-lead">
+                      <p class="planta-card__caption-title">Serena</p>
+                      <p class="planta-card__caption-size">
+                        300 a 257m<sup class="planta-card__sup">2</sup>
+                      </p>
+                    </div>
+                    <p class="planta-card__caption-meta">
+                      02 apartamentos por andar | 3 a 4 vagas
+                    </p>
+                  </div>
+                </div>
+                <div class="planta-card__img-wrap">
+                  <img
+                    class="planta-card__img"
+                    src="./assets/images/png/serena1.png"
+                    alt="Planta ilustrativa da tipologia Serena, 300 a 257 m²"
+                    width="1200"
+                    height="800"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
               </div>
               <a class="btn btn--olive btn--arrow" href="#contato"
                 >Saiba mais</a
@@ -859,135 +893,139 @@
                   class="hero__form-container"
                   aria-label="Formulário de interesse"
                 >
-                <div class="hero__form-wrap lead-split__form-wrap">
-                  <form
-                    class="lead-form"
-                    method="post"
-                    aria-labelledby="lead-form-split-kicker lead-form-split-title"
-                    data-lead-placement="split"
-                  >
-                    <p class="lead-form__kicker" id="lead-form-split-kicker">
-                      Conheça mais sobre o Quadra Aura
-                    </p>
-                    <h2 class="lead-form__title" id="lead-form-split-title">
-                      Queira viver o extraordinário.
-                    </h2>
-                    <div class="lead-form__field">
-                      <label for="lead-name-split">Informe seu nome</label>
-                      <input
-                        class="lead-form__input lead-form__input--pill"
-                        id="lead-name-split"
-                        name="name"
-                        type="text"
-                        autocomplete="name"
-                        placeholder=""
-                        required
-                      />
-                    </div>
-                    <div class="lead-form__field">
-                      <label for="lead-email-split">Nos informe seu e-mail</label>
-                      <input
-                        class="lead-form__input lead-form__input--pill"
-                        id="lead-email-split"
-                        name="email"
-                        type="email"
-                        autocomplete="email"
-                        placeholder=""
-                        required
-                      />
-                    </div>
-                    <div class="lead-form__field">
-                      <label for="lead-phone-split"
-                        >Nos informe seu WhatsApp com DDD</label
-                      >
-                      <input
-                        class="lead-form__input lead-form__input--pill"
-                        id="lead-phone-split"
-                        name="phone"
-                        type="tel"
-                        inputmode="numeric"
-                        autocomplete="tel"
-                        placeholder="(91) 90000-0000"
-                        maxlength="16"
-                        required
-                      />
-                    </div>
-                    <fieldset
-                      class="lead-form__fieldset lead-form__fieldset--contact-row"
-                      aria-labelledby="lead-contact-split-legend"
+                  <div class="hero__form-wrap lead-split__form-wrap">
+                    <form
+                      class="lead-form"
+                      method="post"
+                      aria-labelledby="lead-form-split-kicker lead-form-split-title"
+                      data-lead-placement="split"
                     >
-                      <div class="lead-form__contact-row-inner">
-                        <span
-                          id="lead-contact-split-legend"
-                          class="lead-form__legend"
-                          >Me contate pela:</span
+                      <p class="lead-form__kicker" id="lead-form-split-kicker">
+                        Conheça mais sobre o Quadra Aura
+                      </p>
+                      <h2 class="lead-form__title" id="lead-form-split-title">
+                        Queira viver o extraordinário.
+                      </h2>
+                      <div class="lead-form__field">
+                        <label for="lead-name-split">Informe seu nome</label>
+                        <input
+                          class="lead-form__input lead-form__input--pill"
+                          id="lead-name-split"
+                          name="name"
+                          type="text"
+                          autocomplete="name"
+                          placeholder=""
+                          required
+                        />
+                      </div>
+                      <div class="lead-form__field">
+                        <label for="lead-email-split"
+                          >Nos informe seu e-mail</label
                         >
-                        <div
-                          class="lead-form__radios lead-form__radios--contact-row"
+                        <input
+                          class="lead-form__input lead-form__input--pill"
+                          id="lead-email-split"
+                          name="email"
+                          type="email"
+                          autocomplete="email"
+                          placeholder=""
+                          required
+                        />
+                      </div>
+                      <div class="lead-form__field">
+                        <label for="lead-phone-split"
+                          >Nos informe seu WhatsApp com DDD</label
                         >
-                          <label class="lead-form__radio">
-                            <input
-                              type="radio"
-                              name="contact-split"
-                              value="manha"
-                              checked
-                            />
-                            manhã
-                          </label>
-                          <label class="lead-form__radio">
-                            <input
-                              type="radio"
-                              name="contact-split"
-                              value="tarde"
-                            />
-                            tarde
-                          </label>
-                          <label class="lead-form__radio">
-                            <input
-                              type="radio"
-                              name="contact-split"
-                              value="noite"
-                            />
-                            noite
-                          </label>
-                          <label class="lead-form__radio">
-                            <input
-                              type="radio"
-                              name="contact-split"
-                              value="email"
-                            />
-                            e-mail
-                          </label>
+                        <input
+                          class="lead-form__input lead-form__input--pill"
+                          id="lead-phone-split"
+                          name="phone"
+                          type="tel"
+                          inputmode="numeric"
+                          autocomplete="tel"
+                          placeholder="(91) 90000-0000"
+                          maxlength="16"
+                          required
+                        />
+                      </div>
+                      <fieldset
+                        class="lead-form__fieldset lead-form__fieldset--contact-row"
+                        aria-labelledby="lead-contact-split-legend"
+                      >
+                        <div class="lead-form__contact-row-inner">
+                          <span
+                            id="lead-contact-split-legend"
+                            class="lead-form__legend"
+                            >Me contate pela:</span
+                          >
+                          <div
+                            class="lead-form__radios lead-form__radios--contact-row"
+                          >
+                            <label class="lead-form__radio">
+                              <input
+                                type="radio"
+                                name="contact-split"
+                                value="manha"
+                                checked
+                              />
+                              manhã
+                            </label>
+                            <label class="lead-form__radio">
+                              <input
+                                type="radio"
+                                name="contact-split"
+                                value="tarde"
+                              />
+                              tarde
+                            </label>
+                            <label class="lead-form__radio">
+                              <input
+                                type="radio"
+                                name="contact-split"
+                                value="noite"
+                              />
+                              noite
+                            </label>
+                            <label class="lead-form__radio">
+                              <input
+                                type="radio"
+                                name="contact-split"
+                                value="email"
+                              />
+                              e-mail
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                      <div class="lead-form__privacy">
+                        <input
+                          type="checkbox"
+                          id="lead-privacy-split"
+                          name="privacy_accept"
+                          class="lead-form__checkbox"
+                          required
+                        />
+                        <div class="lead-form__privacy-text">
+                          <label for="lead-privacy-split"
+                            >Aceito e concordo com a</label
+                          >
+                          <a href="#" class="lead-form__inline-link"
+                            >Política de privacidade</a
+                          ><span
+                            class="lead-form__privacy-dot"
+                            aria-hidden="true"
+                            >.</span
+                          >
                         </div>
                       </div>
-                    </fieldset>
-                    <div class="lead-form__privacy">
-                      <input
-                        type="checkbox"
-                        id="lead-privacy-split"
-                        name="privacy_accept"
-                        class="lead-form__checkbox"
-                        required
-                      />
-                      <div class="lead-form__privacy-text">
-                        <label for="lead-privacy-split"
-                          >Aceito e concordo com a</label
-                        >
-                        <a href="#" class="lead-form__inline-link"
-                          >Política de privacidade</a
-                        ><span class="lead-form__privacy-dot" aria-hidden="true"
-                          >.</span
-                        >
-                      </div>
-                    </div>
-                    <button
-                      class="btn btn--olive btn--block btn--lead-submit"
-                      type="submit"
-                    >
-                      Enviar formulário
-                    </button>
-                  </form>
-                </div>
+                      <button
+                        class="btn btn--olive btn--block btn--lead-submit"
+                        type="submit"
+                      >
+                        Enviar formulário
+                      </button>
+                    </form>
+                  </div>
                 </aside>
               </div>
             </div>
@@ -1051,7 +1089,6 @@
       <div class="site-footer-bar__inner">
         <p>Quadra Engenharia. Todos os direitos reservados © 2026</p>
         <div class="site-footer-bar__credits">
-          <!--
           <div class="site-footer-bar__credit">
             <span class="site-footer-bar__credit-label">Design by</span>
             <img
@@ -1064,7 +1101,6 @@
               decoding="async"
             />
           </div>
-          -->
           <div class="site-footer-bar__credit">
             <span class="site-footer-bar__credit-label">Developed by</span>
             <img

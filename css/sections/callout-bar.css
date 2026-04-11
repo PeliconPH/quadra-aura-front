@@ -9,16 +9,14 @@
   box-sizing: border-box;
 }
 
-/* Figma: faixa ~1539×79, radius 64px, padding assimétrico, gap 8px */
 .callout-bar__pill {
-  max-width: min(100%, 96.1875rem); /* 1539px */
+  max-width: min(100%, 84.5rem);
   margin-inline: auto;
   background-color: var(--color-olive);
   color: var(--color-white);
   border-radius: 64px;
   box-sizing: border-box;
-  min-height: 4.9375rem; /* ~79px */
-  padding: 23px 314px 24px 422px;
+  padding: 16px 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,13 +29,12 @@
   font-family: var(--font-sans);
   font-weight: 400;
   font-style: normal;
-  /* Escala no mobile para caber numa linha (−4px vs. referência) */
   font-size: clamp(
     calc(0.8125rem - 4px),
     calc(2.2vw + 0.35rem - 4px),
     calc(1.9625rem - 4px)
   );
-  line-height: 1; /* 31.4px / 31.4px */
+  line-height: 1;
   letter-spacing: 0.63px;
   opacity: 1;
   margin: 0;
@@ -45,22 +42,13 @@
   white-space: nowrap;
 }
 
-@media (max-width: 1200px) {
-  .callout-bar__pill {
-    padding: 1.25rem 2.5rem;
-    border-radius: 48px;
-  }
-}
-
 @media (max-width: 640px) {
   .callout-bar__pill {
-    padding: 0.85rem 1rem;
-    min-height: 0;
+    padding: 8px 1rem;
     border-radius: 40px;
   }
 
   .callout-bar__text {
-    /* Frase longa + nowrap: reduzir para caber numa linha na pílula (−4px) */
     font-size: clamp(
       calc(0.5rem - 4px),
       calc(2vw + 0.22rem - 4px),
