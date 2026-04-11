@@ -21,8 +21,6 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
 }
 
 .callout-bar__text {
@@ -43,17 +41,21 @@
 }
 
 @media (max-width: 640px) {
+  .callout-bar {
+    padding-block: 0.75rem;
+    padding-inline: 1rem;
+  }
+
   .callout-bar__pill {
-    padding: 8px 1rem;
+    padding: 12px 10px;
     border-radius: 40px;
+    width: 100%;
   }
 
   .callout-bar__text {
-    font-size: clamp(
-      calc(0.5rem - 4px),
-      calc(2vw + 0.22rem - 4px),
-      calc(0.6875rem - 4px)
-    );
-    letter-spacing: 0.035em;
+    font-size: clamp(0.6rem, 3.2vw, 0.85rem);
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    line-height: 1;
   }
 }
