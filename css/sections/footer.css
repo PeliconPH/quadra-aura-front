@@ -102,7 +102,7 @@
   font-family: var(--font-bethany);
   font-weight: 400;
   font-style: normal;
-  font-size: clamp(1.05rem, 1.6vw + 0.65rem, 2.03625rem);
+  font-size: calc(clamp(1.05rem, 1.6vw + 0.65rem, 2.03625rem) - 4px);
   line-height: 1.199;
   letter-spacing: 0.65px;
   margin: 0;

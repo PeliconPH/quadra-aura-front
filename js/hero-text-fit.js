@@ -2,6 +2,8 @@
   var headline = document.querySelector(".hero__headline");
   var sub = document.querySelector(".hero__sub");
   var textHost = document.querySelector(".hero__text-container");
+  /** Redução em px no subtítulo (após o ajuste que cabe em 3 linhas); o JS sobrescreve o CSS. */
+  var HERO_SUB_SHRINK_PX = 6;
   if (!headline || !textHost) return;
 
   var headLines = headline.querySelectorAll(".hero__headline-line");
@@ -72,12 +74,15 @@
     if (!sub) return;
     var maxPx = readCssVarPx(sub, "--hero-sub-max", 38);
     var minPx = readCssVarPx(sub, "--hero-sub-min", 11);
+    function applySubResult(px) {
+      sub.style.fontSize = Math.max(minPx, px - HERO_SUB_SHRINK_PX) + "px";
+    }
     if (minPx >= maxPx) {
-      sub.style.fontSize = minPx + "px";
+      applySubResult(minPx);
       return;
     }
     if (subFitsThreeLines(maxPx)) {
-      sub.style.fontSize = maxPx + "px";
+      applySubResult(maxPx);
       return;
     }
     var lo = minPx;
@@ -90,7 +95,7 @@
         hi = mid;
       }
     }
-    sub.style.fontSize = lo + "px";
+    applySubResult(lo);
   }
 
   var layoutTries = 0;

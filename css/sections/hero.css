@@ -240,7 +240,10 @@
   opacity: 0.5;
   margin: 0;
   max-width: min(100%, 44.375rem);
-  font-size: clamp(var(--hero-sub-min), 1.85vw + 0.55rem, var(--hero-sub-max));
+  /* Sem JS, um pouco menor; com JS, hero-text-fit.js aplica o mesmo −4px no resultado */
+  font-size: calc(
+    clamp(var(--hero-sub-min), 1.85vw + 0.55rem, var(--hero-sub-max)) - 4px
+  );
   line-height: 1.35;
 }
 
