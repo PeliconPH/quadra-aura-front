@@ -1,8 +1,8 @@
 .carousel {
   --carousel-count: 1;
   position: relative;
-  width: 100%;
-  max-width: min(1540px, 100%);
+  width: 90%;
+  max-width: min(1024px, 100%);
   margin-inline: auto;
   padding-inline: 0;
   box-sizing: border-box;

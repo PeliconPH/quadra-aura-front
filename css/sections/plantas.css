@@ -53,13 +53,14 @@
   text-align: center;
 }
 
-/* Título + métrica: bloco inline centralizado, escadinha interna */
+/* Título + métrica: empilhados e centralizados */
 .planta-card__caption-lead {
   --planta-title-fs: clamp(1.5rem, 3.8vw, 2.625rem);
   font-size: var(--planta-title-fs);
   display: inline-flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
   gap: 0.3em;
 }
 
@@ -95,13 +96,8 @@
   color: #353622;
 }
 
-/*
-  2ª linha: escadinha via padding-left.
-  padding-left não é afetado por ".planta-card__caption p { margin: 0 }" de maior especificidade.
-*/
 .planta-card__caption-size {
-  align-self: flex-start;
-  padding-left: 2.48em;
+  align-self: center;
   font-family: var(--font-sans);
   font-weight: 700;
   font-style: normal;
